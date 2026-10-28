@@ -29,13 +29,15 @@ export function loadMembership(path){
 const day=d=>d.toISOString().slice(0,10),round=v=>Math.round(v*100)/100
 const LOOKBACK=252,SKIP=21,SPY_SMA=200
 
-export function momentumScores(bars,i){
-  if(i<LOOKBACK)return null
-  const recent=bars[i-SKIP]?.close,old=bars[i-LOOKBACK]?.close
+export function momentumScores(bars,i,lookback=LOOKBACK,skip=SKIP){
+  if(i<lookback)return null
+  const recent=bars[i-skip]?.close,old=bars[i-lookback]?.close
   return recent>0&&old>0?recent/old-1:null
 }
 
-export function simulateMomentum({data,sessions,spy=null,topN=15,marketFilter=false,capital=25000,slippageBps=5,spreadBps=2.5,eligible=null}){
+export function simulateMomentum({data,sessions,spy=null,topN=15,marketFilter=false,capital=25000,slippageBps=5,spreadBps=2.5,eligible=null,lookback=LOOKBACK,skip=SKIP,rebalanceSession=0}){
+  // lookback/skip: the ranking window in sessions (252/21 = 12-1). rebalanceSession: which session of each month
+  // triggers the rebalance (0 = first). Both exist for the robustness sweep; the published rule is the default.
   // topN 'all' holds every eligible name equal weight: the universe benchmark, run through the same engine.
   const slip=slippageBps/10000,spread=spreadBps/10000
   const index=Object.fromEntries(Object.entries(data).map(([s,bars])=>[s,new Map(bars.map((b,i)=>[day(b.date),i]))]))
@@ -44,9 +46,10 @@ export function simulateMomentum({data,sessions,spy=null,topN=15,marketFilter=fa
   const priceAt=(symbol,date,field='close')=>{const i=index[symbol].get(date);return i===undefined?null:data[symbol][i][field]}
   const value=date=>cash+settling+[...positions.values()].reduce((s,p)=>s+p.qty*(priceAt(p.symbol,date)??p.last),0)
   const sell=(p,price,date,reason)=>{const fill=round(price*(1-spread-slip));settling+=p.qty*fill;turnover+=p.qty*fill;positions.delete(p.symbol);trades.push({symbol:p.symbol,qty:p.qty,entry:p.entry,exit:fill,entryDate:p.entryDate,exitDate:date,reason,pnl:round(p.qty*(fill-p.entry)),returnPct:round((fill/p.entry-1)*100)})}
-  let lastMonth=null
+  let lastMonth=null,sessionInMonth=0
   for(const date of sessions){
     cash+=settling;settling=0
+    const monthKey=date.slice(0,7);if(monthKey!==lastMonth){lastMonth=monthKey;sessionInMonth=0}else sessionInMonth++
     // Buys queued at the previous rebalance fill at today's open.
     if(pendingBuys.length){
       const equity=value(date),slot=equity/slotCount
@@ -60,15 +63,13 @@ export function simulateMomentum({data,sessions,spy=null,topN=15,marketFilter=fa
       }
       pendingBuys=[]
     }
-    const month=date.slice(0,7)
-    if(month!==lastMonth){
-      lastMonth=month
+    if(sessionInMonth===rebalanceSession){
       // Rank on completed bars through the previous session.
       const ranked=[]
       for(const symbol of Object.keys(data)){
         const i=index[symbol].get(date);if(i===undefined)continue
         if(eligible&&!eligible(symbol,date))continue
-        const score=momentumScores(data[symbol],i);if(score!==null)ranked.push({symbol,score})
+        const score=momentumScores(data[symbol],i,lookback,skip);if(score!==null)ranked.push({symbol,score})
       }
       ranked.sort((a,b)=>b.score-a.score||a.symbol.localeCompare(b.symbol))
       slotCount=topN==='all'?Math.max(1,ranked.length):topN
