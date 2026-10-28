@@ -69,3 +69,15 @@ test('point-in-time membership gates eligibility and the universe benchmark hold
   assert.ok(all.curve.slice(300).every(c=>c.positions===3),'universe benchmark should hold every name')
   assert.ok(all.averageExposurePct>50)
 })
+
+test('lookback and rebalance day are parameters with the published defaults',()=>{
+  const bars=series(0.001)
+  assert.ok(Math.abs(momentumScores(bars,300,126,21)-(bars[279].close/bars[174].close-1))<1e-9)
+  const data={A:series(0.001),B:series(0.0008,50),C:series(0.0006,20)}
+  const first=simulateMomentum({data,sessions,topN:2,capital:25000})
+  const tenth=simulateMomentum({data,sessions,topN:2,capital:25000,rebalanceSession:9})
+  assert.equal(first.rebalances,tenth.rebalances)
+  assert.ok(first.rebalanceLog[1].date<tenth.rebalanceLog[1].date,'tenth-session rebalance should come later in the month')
+  const short=simulateMomentum({data,sessions,topN:2,capital:25000,lookback:126})
+  assert.ok(short.closedTrades>=1)
+})
