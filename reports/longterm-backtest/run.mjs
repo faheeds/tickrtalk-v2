@@ -37,7 +37,7 @@ const variants=[['published',5],['published',15],['equal',5],['equal',15]]
 const allTrades=[],allCurves=[]
 for(const [name,[start,end]] of Object.entries(phases)){
   const sessions=sessionsAll.filter(d=>d>=start&&d<=end);if(!sessions.length)continue
-  const phase={start,end,sessions:sessions.length,variants:{},benchmarks:{}}
+  const phase={start,end,firstSession:sessions[0],sessions:sessions.length,variants:{},benchmarks:{}}
   for(const [sizing,slippageBps] of variants){
     const r=simulate({data,sessions,profile,risk,capital,sizing,slippageBps,signals})
     const key=`${sizing}_${slippageBps}bps`;phase.variants[key]={...r,trades:undefined,curve:undefined}
@@ -62,7 +62,7 @@ md+=`"Published" sizing is the engine's risk-per-trade rule. "Equal" sizing (cap
 for(const [name,phase] of Object.entries(results.phases)){
   md+=`## ${name} (${phase.start} to ${phase.end}, ${phase.sessions} sessions)\n\n| Variant | Return | CAGR | Max drawdown | Trades | Win rate | Profit factor | Avg hold (days) | Avg exposure |\n| :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |\n`
   for(const [key,v] of Object.entries(phase.variants))md+=`| ${key} | ${pct(v.returnPct)} | ${pct(v.cagrPct)} | ${v.maxDrawdownPct.toFixed(2)}% | ${v.closedTrades} | ${v.winRatePct==null?'n/a':v.winRatePct.toFixed(1)+'%'} | ${num(v.profitFactor)} | ${num(v.averageHoldDays)} | ${v.averageExposurePct.toFixed(1)}% |\n`
-  for(const [symbol,b] of Object.entries(phase.benchmarks))md+=b.unavailable?`| Buy and hold ${symbol} | not listed in this phase | | | | | | | |\n`:`| Buy and hold ${symbol} | ${pct(b.returnPct)} | ${pct(b.cagrPct)} | ${b.maxDrawdownPct.toFixed(2)}% | 1 | | | | 100% |\n`
+  for(const [symbol,b] of Object.entries(phase.benchmarks))md+=b.unavailable?`| Buy and hold ${symbol} | not listed in this phase | | | | | | | |\n`:`| Buy and hold ${symbol}${b.entryDate>phase.firstSession?' (from '+b.entryDate+', not comparable)':''} | ${pct(b.returnPct)} | ${pct(b.cagrPct)} | ${b.maxDrawdownPct.toFixed(2)}% | 1 | | | | 100% |\n`
   md+='\n'
 }
 md+=`## How to read this\n\nThe strategy earns its place only if the published variant beats buy-and-hold SPUS (or SPY where SPUS is not listed) on return and on drawdown, at 15 bps slippage, in validation and test, not only in development. A high return with low average exposure means the rule is mostly in cash; compare the equal-weight row to see what the sizing costs. Fewer than 100 closed trades across all phases is too few to trust.\n`
