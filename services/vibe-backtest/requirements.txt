@@ -1,0 +1,2 @@
+vibe-trading-ai==0.1.18
+PyYAML==6.0.3

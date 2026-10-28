@@ -1,0 +1,23 @@
+{
+  "experiment":"broad-liquid-stocks-2026-10-16",
+  "status":"research_only",
+  "period":{"start":"2024-10-15","end":"2026-10-15","warmup":"2024-04-01"},
+  "splits":{"development":{"start":"2024-10-15","end":"2025-10-14"},"validation":{"start":"2025-10-15","end":"2026-04-14"},"test":{"start":"2026-04-15","end":"2026-10-15"}},
+  "intradayWarmup":"2024-09-01",
+  "feed":"sip",
+  "adjustment":"split",
+  "executionAdjustment":"raw",
+  "priceScale":"Raw daily prices determine historical eligibility. Split-affected sessions require raw fifteen-minute decision bars. Split-adjusted daily technical history is scaled into session nominal units using a validated opening-derived split factor. Minute execution bars are raw, preserving actual whole-share affordability.",
+  "dataQualityPolicy":"Exclude and disclose stock-sessions whose raw and adjusted series do not provide a consistent opening-derived corporate-action scale. Never repair them using future trade returns or assume a fill. Such exclusions remain subject to the historical-universe/data audit before promotion.",
+  "eligibility":{"minimumPrice":10,"minimumAverageDollarVolume":50000000,"liquidityLookback":20,"minimumPriorSessions":60,"maximumSpreadPct":0.1,"exchanges":["NASDAQ","NYSE"]},
+  "scanner":{"openingMinutes":15,"minimumRelativeVolume":1.5,"minimumAbsoluteGapPct":0.5,"maximumAbsoluteGapPct":5,"shortlistSize":20,"rank":"opening relative volume times (1 + absolute opening gap fraction), then symbol"},
+  "arms":["sp500","broad_liquid","daily_opportunities"],
+  "setups":["morning_breakout","vwap_reclaim"],
+  "signalRules":{"decisionBars":"completed 15-minute regular-session bars; first post-range decision at 10:00 Eastern; latest decision at 11:00 Eastern","marketRegime":"previous SPY close above prior 50-close average and current SPY close above its cumulative regular-session HLC-volume VWAP","stockTrend":"previous close above prior 20-close average","minimumOpeningRelativeVolume":1,"maximumRangeAtr":0.8,"minimumRangeAtr":0.1,"breakout":"opening candle bullish; current close crosses opening high, exceeds VWAP, outperforms SPY since open, is no more than 0.25 ATR above opening high and 0.75 ATR above VWAP; opening gap between 0% and 5%","reclaim":"opening candle bearish with low at least 0.25 prior-session ATR below prior close; completed later close crosses above VWAP, closes above previous bar high and current open, and exceeds session open; absolute opening gap at most 5%","stop":"minimum low of the signal and preceding 15-minute bars, rounded down to cents","targets":{"morning_breakout":2,"vwap_reclaim":1.5},"attempts":"first valid opportunity per stock/setup/session only; unfilled orders are not chased"},
+  "risk":{"capital":2000,"riskPct":0.25,"maxPositions":2,"maxPositionFraction":0.5,"maxTradesPerDay":2,"dailyLossPct":0.75,"flattenMinutes":5,"maxHoldingMinutes":90,"entryExpiryMinutes":2,"maxEntrySlipPct":0.1,"minStopPct":0.25,"maxStopPct":1.5,"maxAccountDrawdownPct":8},
+  "costs":{"baselineSlippageBps":5,"stressSlippageBps":10,"spreadBps":2.5,"sellFeePerShare":0.01},
+  "qualification":{"developmentTrades":60,"validationTrades":20,"testTrades":20,"developmentProfitFactor":1.15,"validationProfitFactor":1.1,"testProfitFactor":1.1,"minimumPositiveActiveMonthFraction":0.6,"minimumActiveMonths":{"development":8,"validation":4,"test":4},"maximumDailyDrawdownPct":8},
+  "selection":"Compare six predefined setup/universe combinations on development data only. Freeze the highest risk-adjusted eligible combination before later periods. If none qualifies, retain the highest scoring diagnostic only. Do not activate from these results.",
+  "activationRequirements":{"paperOnly":true,"ownerReleaseRequired":true,"verifiedFreshAaoifiPass":true,"verifiedCatalyst":true,"verifiedCurrentQuote":true,"verifiedCash":true,"verifiedRealtimeFeed":true,"pointInTimeUniverseAudit":true,"prospectivePaperValidation":true},
+  "limitations":["Current listing and current S&P 500 snapshots are not point-in-time historical membership; results are survivorship-biased diagnostics.","Previous experiments exposed these dates. Chronological separation is retrospective and cannot be claimed as a pristine holdout.","Without historical AAOIFI and time-stamped catalysts, these runs evaluate price/volume selection proxies only.","Fifteen-minute completed bars generate decisions; one-minute bars are required for every potential trading session to simulate execution.","Nominal session scaling is reconstructed from raw and split-adjusted opening prices and requires matching-series validation; it is not a full corporate-action or historical-symbol audit.","Historical SIP access does not establish real-time SIP permission."]
+}

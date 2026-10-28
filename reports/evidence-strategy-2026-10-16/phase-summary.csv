@@ -1,0 +1,7 @@
+strategy,phase,capital,endingValue,pnl,returnPct,trades,winRatePct,profitFactor,maximumDailyDrawdownPct,maximumPeakDrawdownPct,activeMonths,stressReturnPct,ambiguousDeferredReturnPct
+"Stocks in Play ORB","development",2000,724.66,-1275.34,-63.77,2513,6.33,0.5049771033829925,63.77,"",37,-74.93,-19.66
+"Stocks in Play ORB","validation",2000,884.81,-1115.19,-55.76,1267,4.26,0.32048717337980537,55.92,"",13,-61.39,-7.76
+"Stocks in Play ORB","test",2000,831.34,-1168.66,-58.43,1306,4.82,0.3373632625576977,58.8,"",13,-67.49,-35.86
+"Earnings momentum","development",2000,1983.76,-16.24,-0.81,162,36.42,0.957046172148762,4.49,4.4946970141780165,35,-2.09,""
+"Earnings momentum","validation",2000,2053.82,53.82,2.69,49,42.86,1.5449135924746926,2,2.001567377618924,12,2.52,""
+"Earnings momentum","test",2000,2003.08,3.08,0.15,51,43.14,1.0282066723322933,2.47,2.465657918569966,11,0.02,""

@@ -1,0 +1,1545 @@
+{
+  "protocolHash": "a55c9469e0f9e44bfe9d3c7a1a2e3b2b4ee3f1f34c84d9aefe5f089a97550cea",
+  "modelHash": "e0956726eda7134a59250598ef56c935ab8b67bede3a698eec46b9c618c84c45",
+  "selected": {
+    "id": "breakout-15-v1.5-r2",
+    "setup": "breakout",
+    "openingMinutes": 15,
+    "relativeVolume": 1.5,
+    "rewardR": 2
+  },
+  "developmentQualified": false,
+  "developmentCandidates": [
+    {
+      "capital": 2000,
+      "endingValue": 1928.92,
+      "pnl": -71.08,
+      "returnPct": -3.55,
+      "trades": 108,
+      "winRatePct": 36.11,
+      "profitFactor": 0.6915096607365718,
+      "noLosses": false,
+      "maximumDailyDrawdownPct": 3.81,
+      "activeMonths": 11,
+      "positiveActiveMonthFraction": 0.18181818181818182,
+      "score": -0.1107122122398953,
+      "months": {
+        "2024-10": {
+          "pnl": -0.836337500000127,
+          "trades": 6
+        },
+        "2024-11": {
+          "pnl": -10.339112000000569,
+          "trades": 9
+        },
+        "2024-12": {
+          "pnl": -3.9169450000003962,
+          "trades": 9
+        },
+        "2025-01": {
+          "pnl": -14.455919999999878,
+          "trades": 10
+        },
+        "2025-02": {
+          "pnl": 5.260163749999947,
+          "trades": 3
+        },
+        "2025-03": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-04": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-05": {
+          "pnl": 27.887512250000327,
+          "trades": 8
+        },
+        "2025-06": {
+          "pnl": -20.299126000000342,
+          "trades": 18
+        },
+        "2025-07": {
+          "pnl": -8.657906400000456,
+          "trades": 13
+        },
+        "2025-08": {
+          "pnl": -20.108855624999933,
+          "trades": 11
+        },
+        "2025-09": {
+          "pnl": -15.802323750000369,
+          "trades": 16
+        },
+        "2025-10": {
+          "pnl": -9.81164562500021,
+          "trades": 5
+        }
+      },
+      "parameters": {
+        "id": "breakout-15-v1-r1.5",
+        "setup": "breakout",
+        "openingMinutes": 15,
+        "relativeVolume": 1,
+        "rewardR": 1.5
+      },
+      "split": {
+        "start": "2024-10-15",
+        "end": "2025-10-14"
+      },
+      "slippageBps": 5,
+      "diagnostics": {
+        "invalidEntryGaps": 0,
+        "expiredOrders": 0,
+        "missingCloseBars": 0,
+        "ambiguousBars": 0,
+        "haltDate": null
+      },
+      "qualification": {
+        "passed": false,
+        "reasons": [
+          "nonpositive net profit",
+          "profit factor below threshold",
+          "insufficient monthly consistency"
+        ]
+      }
+    },
+    {
+      "capital": 2000,
+      "endingValue": 1940.85,
+      "pnl": -59.15,
+      "returnPct": -2.96,
+      "trades": 108,
+      "winRatePct": 36.11,
+      "profitFactor": 0.7457025152345971,
+      "noLosses": false,
+      "maximumDailyDrawdownPct": 3.32,
+      "activeMonths": 11,
+      "positiveActiveMonthFraction": 0.2727272727272727,
+      "score": -0.08309397441603476,
+      "months": {
+        "2024-10": {
+          "pnl": 2.0136624999993273,
+          "trades": 6
+        },
+        "2024-11": {
+          "pnl": -7.639112000000296,
+          "trades": 9
+        },
+        "2024-12": {
+          "pnl": -9.88784750000059,
+          "trades": 9
+        },
+        "2025-01": {
+          "pnl": -17.598754999999983,
+          "trades": 10
+        },
+        "2025-02": {
+          "pnl": 4.660376250000127,
+          "trades": 3
+        },
+        "2025-03": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-04": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-05": {
+          "pnl": 35.31404975000078,
+          "trades": 8
+        },
+        "2025-06": {
+          "pnl": -14.510166000000481,
+          "trades": 18
+        },
+        "2025-07": {
+          "pnl": -12.495715150000478,
+          "trades": 13
+        },
+        "2025-08": {
+          "pnl": -18.848855624999715,
+          "trades": 11
+        },
+        "2025-09": {
+          "pnl": -12.083182250000618,
+          "trades": 16
+        },
+        "2025-10": {
+          "pnl": -8.071645624999974,
+          "trades": 5
+        }
+      },
+      "parameters": {
+        "id": "breakout-15-v1-r2",
+        "setup": "breakout",
+        "openingMinutes": 15,
+        "relativeVolume": 1,
+        "rewardR": 2
+      },
+      "split": {
+        "start": "2024-10-15",
+        "end": "2025-10-14"
+      },
+      "slippageBps": 5,
+      "diagnostics": {
+        "invalidEntryGaps": 0,
+        "expiredOrders": 0,
+        "missingCloseBars": 0,
+        "ambiguousBars": 0,
+        "haltDate": null
+      },
+      "qualification": {
+        "passed": false,
+        "reasons": [
+          "nonpositive net profit",
+          "profit factor below threshold",
+          "insufficient monthly consistency"
+        ]
+      }
+    },
+    {
+      "capital": 2000,
+      "endingValue": 1985.36,
+      "pnl": -14.64,
+      "returnPct": -0.73,
+      "trades": 49,
+      "winRatePct": 36.73,
+      "profitFactor": 0.8521788032264781,
+      "noLosses": false,
+      "maximumDailyDrawdownPct": 2.05,
+      "activeMonths": 9,
+      "positiveActiveMonthFraction": 0.3333333333333333,
+      "score": -0.03021912287845626,
+      "months": {
+        "2024-10": {
+          "pnl": -4.81036250000011,
+          "trades": 2
+        },
+        "2024-11": {
+          "pnl": 9.240315000000237,
+          "trades": 3
+        },
+        "2024-12": {
+          "pnl": -2.917440000000397,
+          "trades": 6
+        },
+        "2025-01": {
+          "pnl": -1.1668374999999287,
+          "trades": 6
+        },
+        "2025-02": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-03": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-04": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-05": {
+          "pnl": 19.086787700000286,
+          "trades": 5
+        },
+        "2025-06": {
+          "pnl": 3.440642399999433,
+          "trades": 9
+        },
+        "2025-07": {
+          "pnl": -24.29541104999953,
+          "trades": 9
+        },
+        "2025-08": {
+          "pnl": -11.496843074999788,
+          "trades": 5
+        },
+        "2025-09": {
+          "pnl": -1.7215410999999676,
+          "trades": 4
+        },
+        "2025-10": {
+          "pnl": 0,
+          "trades": 0
+        }
+      },
+      "parameters": {
+        "id": "breakout-15-v1.5-r1.5",
+        "setup": "breakout",
+        "openingMinutes": 15,
+        "relativeVolume": 1.5,
+        "rewardR": 1.5
+      },
+      "split": {
+        "start": "2024-10-15",
+        "end": "2025-10-14"
+      },
+      "slippageBps": 5,
+      "diagnostics": {
+        "invalidEntryGaps": 0,
+        "expiredOrders": 0,
+        "missingCloseBars": 0,
+        "ambiguousBars": 0,
+        "haltDate": null
+      },
+      "qualification": {
+        "passed": false,
+        "reasons": [
+          "insufficient trades",
+          "nonpositive net profit",
+          "profit factor below threshold",
+          "insufficient monthly consistency"
+        ]
+      }
+    },
+    {
+      "capital": 2000,
+      "endingValue": 1993.48,
+      "pnl": -6.52,
+      "returnPct": -0.33,
+      "trades": 49,
+      "winRatePct": 36.73,
+      "profitFactor": 0.9341254618767626,
+      "noLosses": false,
+      "maximumDailyDrawdownPct": 1.9,
+      "activeMonths": 9,
+      "positiveActiveMonthFraction": 0.3333333333333333,
+      "score": -0.01128475527412238,
+      "months": {
+        "2024-10": {
+          "pnl": -4.81036250000011,
+          "trades": 2
+        },
+        "2024-11": {
+          "pnl": 11.940315000000282,
+          "trades": 3
+        },
+        "2024-12": {
+          "pnl": -8.888342500000363,
+          "trades": 6
+        },
+        "2025-01": {
+          "pnl": -4.309672500000033,
+          "trades": 6
+        },
+        "2025-02": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-03": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-04": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-05": {
+          "pnl": 25.98678770000015,
+          "trades": 5
+        },
+        "2025-06": {
+          "pnl": 9.410642399999915,
+          "trades": 9
+        },
+        "2025-07": {
+          "pnl": -24.29541104999953,
+          "trades": 9
+        },
+        "2025-08": {
+          "pnl": -11.496843074999788,
+          "trades": 5
+        },
+        "2025-09": {
+          "pnl": -0.06154110000011315,
+          "trades": 4
+        },
+        "2025-10": {
+          "pnl": 0,
+          "trades": 0
+        }
+      },
+      "parameters": {
+        "id": "breakout-15-v1.5-r2",
+        "setup": "breakout",
+        "openingMinutes": 15,
+        "relativeVolume": 1.5,
+        "rewardR": 2
+      },
+      "split": {
+        "start": "2024-10-15",
+        "end": "2025-10-14"
+      },
+      "slippageBps": 5,
+      "diagnostics": {
+        "invalidEntryGaps": 0,
+        "expiredOrders": 0,
+        "missingCloseBars": 0,
+        "ambiguousBars": 0,
+        "haltDate": null
+      },
+      "qualification": {
+        "passed": false,
+        "reasons": [
+          "insufficient trades",
+          "nonpositive net profit",
+          "profit factor below threshold",
+          "insufficient monthly consistency"
+        ]
+      }
+    },
+    {
+      "capital": 2000,
+      "endingValue": 1904.02,
+      "pnl": -95.98,
+      "returnPct": -4.8,
+      "trades": 87,
+      "winRatePct": 29.89,
+      "profitFactor": 0.5073103101227313,
+      "noLosses": false,
+      "maximumDailyDrawdownPct": 4.8,
+      "activeMonths": 11,
+      "positiveActiveMonthFraction": 0.18181818181818182,
+      "score": -0.15840527546443858,
+      "months": {
+        "2024-10": {
+          "pnl": -7.871512500000108,
+          "trades": 2
+        },
+        "2024-11": {
+          "pnl": -30.14515250000045,
+          "trades": 8
+        },
+        "2024-12": {
+          "pnl": -12.538626250000107,
+          "trades": 6
+        },
+        "2025-01": {
+          "pnl": -7.831468800000039,
+          "trades": 6
+        },
+        "2025-02": {
+          "pnl": 3.9373312500001703,
+          "trades": 1
+        },
+        "2025-03": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-04": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-05": {
+          "pnl": -5.814664999999877,
+          "trades": 11
+        },
+        "2025-06": {
+          "pnl": -4.3521714000007705,
+          "trades": 22
+        },
+        "2025-07": {
+          "pnl": -12.610807200000636,
+          "trades": 9
+        },
+        "2025-08": {
+          "pnl": 4.935466200000292,
+          "trades": 11
+        },
+        "2025-09": {
+          "pnl": -16.011138749999873,
+          "trades": 7
+        },
+        "2025-10": {
+          "pnl": -7.678392000000031,
+          "trades": 4
+        }
+      },
+      "parameters": {
+        "id": "breakout-30-v1-r1.5",
+        "setup": "breakout",
+        "openingMinutes": 30,
+        "relativeVolume": 1,
+        "rewardR": 1.5
+      },
+      "split": {
+        "start": "2024-10-15",
+        "end": "2025-10-14"
+      },
+      "slippageBps": 5,
+      "diagnostics": {
+        "invalidEntryGaps": 0,
+        "expiredOrders": 0,
+        "missingCloseBars": 0,
+        "ambiguousBars": 0,
+        "haltDate": null
+      },
+      "qualification": {
+        "passed": false,
+        "reasons": [
+          "nonpositive net profit",
+          "profit factor below threshold",
+          "insufficient monthly consistency"
+        ]
+      }
+    },
+    {
+      "capital": 2000,
+      "endingValue": 1906.87,
+      "pnl": -93.13,
+      "returnPct": -4.66,
+      "trades": 87,
+      "winRatePct": 28.74,
+      "profitFactor": 0.5233042990970422,
+      "noLosses": false,
+      "maximumDailyDrawdownPct": 4.66,
+      "activeMonths": 11,
+      "positiveActiveMonthFraction": 0.36363636363636365,
+      "score": -0.14576384682869747,
+      "months": {
+        "2024-10": {
+          "pnl": -7.871512500000108,
+          "trades": 2
+        },
+        "2024-11": {
+          "pnl": -30.14515250000045,
+          "trades": 8
+        },
+        "2024-12": {
+          "pnl": -12.538626250000107,
+          "trades": 6
+        },
+        "2025-01": {
+          "pnl": -7.831468800000039,
+          "trades": 6
+        },
+        "2025-02": {
+          "pnl": 1.4975437500002045,
+          "trades": 1
+        },
+        "2025-03": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-04": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-05": {
+          "pnl": 0.3253349999999955,
+          "trades": 11
+        },
+        "2025-06": {
+          "pnl": 3.12722359999907,
+          "trades": 22
+        },
+        "2025-07": {
+          "pnl": -19.786797200000592,
+          "trades": 9
+        },
+        "2025-08": {
+          "pnl": 2.504691200000252,
+          "trades": 11
+        },
+        "2025-09": {
+          "pnl": -16.011138749999873,
+          "trades": 7
+        },
+        "2025-10": {
+          "pnl": -6.398391999999831,
+          "trades": 4
+        }
+      },
+      "parameters": {
+        "id": "breakout-30-v1-r2",
+        "setup": "breakout",
+        "openingMinutes": 30,
+        "relativeVolume": 1,
+        "rewardR": 2
+      },
+      "split": {
+        "start": "2024-10-15",
+        "end": "2025-10-14"
+      },
+      "slippageBps": 5,
+      "diagnostics": {
+        "invalidEntryGaps": 0,
+        "expiredOrders": 0,
+        "missingCloseBars": 0,
+        "ambiguousBars": 0,
+        "haltDate": null
+      },
+      "qualification": {
+        "passed": false,
+        "reasons": [
+          "nonpositive net profit",
+          "profit factor below threshold",
+          "insufficient monthly consistency"
+        ]
+      }
+    },
+    {
+      "capital": 2000,
+      "endingValue": 1956.12,
+      "pnl": -43.88,
+      "returnPct": -2.19,
+      "trades": 28,
+      "winRatePct": 25,
+      "profitFactor": 0.40901481803787265,
+      "noLosses": false,
+      "maximumDailyDrawdownPct": 2.19,
+      "activeMonths": 8,
+      "positiveActiveMonthFraction": 0.125,
+      "score": -0.1285725690618962,
+      "months": {
+        "2024-10": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2024-11": {
+          "pnl": -14.609515000000101,
+          "trades": 4
+        },
+        "2024-12": {
+          "pnl": -1.3862475000000813,
+          "trades": 2
+        },
+        "2025-01": {
+          "pnl": -7.711747500000456,
+          "trades": 2
+        },
+        "2025-02": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-03": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-04": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-05": {
+          "pnl": 0.7137539750001451,
+          "trades": 5
+        },
+        "2025-06": {
+          "pnl": -1.8753151000005346,
+          "trades": 9
+        },
+        "2025-07": {
+          "pnl": -8.13953400000014,
+          "trades": 3
+        },
+        "2025-08": {
+          "pnl": -4.655021499999975,
+          "trades": 1
+        },
+        "2025-09": {
+          "pnl": -6.212129999999661,
+          "trades": 2
+        },
+        "2025-10": {
+          "pnl": 0,
+          "trades": 0
+        }
+      },
+      "parameters": {
+        "id": "breakout-30-v1.5-r1.5",
+        "setup": "breakout",
+        "openingMinutes": 30,
+        "relativeVolume": 1.5,
+        "rewardR": 1.5
+      },
+      "split": {
+        "start": "2024-10-15",
+        "end": "2025-10-14"
+      },
+      "slippageBps": 5,
+      "diagnostics": {
+        "invalidEntryGaps": 0,
+        "expiredOrders": 0,
+        "missingCloseBars": 0,
+        "ambiguousBars": 0,
+        "haltDate": null
+      },
+      "qualification": {
+        "passed": false,
+        "reasons": [
+          "insufficient trades",
+          "nonpositive net profit",
+          "profit factor below threshold",
+          "insufficient monthly consistency"
+        ]
+      }
+    },
+    {
+      "capital": 2000,
+      "endingValue": 1964.74,
+      "pnl": -35.26,
+      "returnPct": -1.76,
+      "trades": 28,
+      "winRatePct": 25,
+      "profitFactor": 0.5251220412603368,
+      "noLosses": false,
+      "maximumDailyDrawdownPct": 1.76,
+      "activeMonths": 8,
+      "positiveActiveMonthFraction": 0.25,
+      "score": -0.09204460007199805,
+      "months": {
+        "2024-10": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2024-11": {
+          "pnl": -14.609515000000101,
+          "trades": 4
+        },
+        "2024-12": {
+          "pnl": -1.3862475000000813,
+          "trades": 2
+        },
+        "2025-01": {
+          "pnl": -7.711747500000456,
+          "trades": 2
+        },
+        "2025-02": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-03": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-04": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-05": {
+          "pnl": 5.113753975000236,
+          "trades": 5
+        },
+        "2025-06": {
+          "pnl": 2.3446848999992653,
+          "trades": 9
+        },
+        "2025-07": {
+          "pnl": -8.13953400000014,
+          "trades": 3
+        },
+        "2025-08": {
+          "pnl": -4.655021499999975,
+          "trades": 1
+        },
+        "2025-09": {
+          "pnl": -6.212129999999661,
+          "trades": 2
+        },
+        "2025-10": {
+          "pnl": 0,
+          "trades": 0
+        }
+      },
+      "parameters": {
+        "id": "breakout-30-v1.5-r2",
+        "setup": "breakout",
+        "openingMinutes": 30,
+        "relativeVolume": 1.5,
+        "rewardR": 2
+      },
+      "split": {
+        "start": "2024-10-15",
+        "end": "2025-10-14"
+      },
+      "slippageBps": 5,
+      "diagnostics": {
+        "invalidEntryGaps": 0,
+        "expiredOrders": 0,
+        "missingCloseBars": 0,
+        "ambiguousBars": 0,
+        "haltDate": null
+      },
+      "qualification": {
+        "passed": false,
+        "reasons": [
+          "insufficient trades",
+          "nonpositive net profit",
+          "profit factor below threshold",
+          "insufficient monthly consistency"
+        ]
+      }
+    },
+    {
+      "capital": 2000,
+      "endingValue": 1838.76,
+      "pnl": -161.24,
+      "returnPct": -8.06,
+      "trades": 102,
+      "winRatePct": 21.57,
+      "profitFactor": 0.34491092055970657,
+      "noLosses": false,
+      "maximumDailyDrawdownPct": 8.06,
+      "activeMonths": 10,
+      "positiveActiveMonthFraction": 0.1,
+      "score": -0.2547069865931299,
+      "months": {
+        "2024-10": {
+          "pnl": -12.29261492500018,
+          "trades": 6
+        },
+        "2024-11": {
+          "pnl": -9.64582375000009,
+          "trades": 11
+        },
+        "2024-12": {
+          "pnl": -9.792767500000537,
+          "trades": 11
+        },
+        "2025-01": {
+          "pnl": -26.959767950000924,
+          "trades": 10
+        },
+        "2025-02": {
+          "pnl": 2.5514600000001337,
+          "trades": 2
+        },
+        "2025-03": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-04": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-05": {
+          "pnl": -15.159303100000216,
+          "trades": 10
+        },
+        "2025-06": {
+          "pnl": -34.679766099999824,
+          "trades": 25
+        },
+        "2025-07": {
+          "pnl": -17.562539475000904,
+          "trades": 13
+        },
+        "2025-08": {
+          "pnl": -26.0853424500001,
+          "trades": 10
+        },
+        "2025-09": {
+          "pnl": -11.610611625000274,
+          "trades": 4
+        },
+        "2025-10": {
+          "pnl": 0,
+          "trades": 0
+        }
+      },
+      "parameters": {
+        "id": "retest-15-v1-r1.5",
+        "setup": "retest",
+        "openingMinutes": 15,
+        "relativeVolume": 1,
+        "rewardR": 1.5
+      },
+      "split": {
+        "start": "2024-10-15",
+        "end": "2025-10-14"
+      },
+      "slippageBps": 5,
+      "diagnostics": {
+        "invalidEntryGaps": 0,
+        "expiredOrders": 0,
+        "missingCloseBars": 0,
+        "ambiguousBars": 0,
+        "haltDate": "2025-09-10"
+      },
+      "qualification": {
+        "passed": false,
+        "reasons": [
+          "nonpositive net profit",
+          "profit factor below threshold",
+          "drawdown exceeds threshold",
+          "insufficient monthly consistency"
+        ]
+      }
+    },
+    {
+      "capital": 2000,
+      "endingValue": 1839.49,
+      "pnl": -160.51,
+      "returnPct": -8.03,
+      "trades": 101,
+      "winRatePct": 20.79,
+      "profitFactor": 0.3340819839115404,
+      "noLosses": false,
+      "maximumDailyDrawdownPct": 8.03,
+      "activeMonths": 10,
+      "positiveActiveMonthFraction": 0.1,
+      "score": -0.25454226089742454,
+      "months": {
+        "2024-10": {
+          "pnl": -11.062614925000616,
+          "trades": 6
+        },
+        "2024-11": {
+          "pnl": -17.518958750000365,
+          "trades": 11
+        },
+        "2024-12": {
+          "pnl": -9.792767500000537,
+          "trades": 11
+        },
+        "2025-01": {
+          "pnl": -26.959767950000924,
+          "trades": 10
+        },
+        "2025-02": {
+          "pnl": 4.23145999999997,
+          "trades": 2
+        },
+        "2025-03": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-04": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-05": {
+          "pnl": -15.159303100000216,
+          "trades": 10
+        },
+        "2025-06": {
+          "pnl": -29.55476609999937,
+          "trades": 25
+        },
+        "2025-07": {
+          "pnl": -19.153919475000748,
+          "trades": 13
+        },
+        "2025-08": {
+          "pnl": -28.979386200000135,
+          "trades": 10
+        },
+        "2025-09": {
+          "pnl": -6.557449125000176,
+          "trades": 3
+        },
+        "2025-10": {
+          "pnl": 0,
+          "trades": 0
+        }
+      },
+      "parameters": {
+        "id": "retest-15-v1-r2",
+        "setup": "retest",
+        "openingMinutes": 15,
+        "relativeVolume": 1,
+        "rewardR": 2
+      },
+      "split": {
+        "start": "2024-10-15",
+        "end": "2025-10-14"
+      },
+      "slippageBps": 5,
+      "diagnostics": {
+        "invalidEntryGaps": 0,
+        "expiredOrders": 0,
+        "missingCloseBars": 0,
+        "ambiguousBars": 0,
+        "haltDate": "2025-09-08"
+      },
+      "qualification": {
+        "passed": false,
+        "reasons": [
+          "nonpositive net profit",
+          "profit factor below threshold",
+          "drawdown exceeds threshold",
+          "insufficient monthly consistency"
+        ]
+      }
+    },
+    {
+      "capital": 2000,
+      "endingValue": 1943.5,
+      "pnl": -56.5,
+      "returnPct": -2.83,
+      "trades": 52,
+      "winRatePct": 26.92,
+      "profitFactor": 0.542602615046121,
+      "noLosses": false,
+      "maximumDailyDrawdownPct": 3.74,
+      "activeMonths": 10,
+      "positiveActiveMonthFraction": 0.4,
+      "score": -0.1022462920855169,
+      "months": {
+        "2024-10": {
+          "pnl": -6.141599999999926,
+          "trades": 2
+        },
+        "2024-11": {
+          "pnl": 4.845931249999921,
+          "trades": 4
+        },
+        "2024-12": {
+          "pnl": -4.818902500000377,
+          "trades": 5
+        },
+        "2025-01": {
+          "pnl": -9.25556544999995,
+          "trades": 4
+        },
+        "2025-02": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-03": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-04": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-05": {
+          "pnl": -11.196214350000218,
+          "trades": 5
+        },
+        "2025-06": {
+          "pnl": 3.3793220749996635,
+          "trades": 12
+        },
+        "2025-07": {
+          "pnl": -25.964446975000328,
+          "trades": 8
+        },
+        "2025-08": {
+          "pnl": -20.073791749999828,
+          "trades": 5
+        },
+        "2025-09": {
+          "pnl": 5.520881250000002,
+          "trades": 6
+        },
+        "2025-10": {
+          "pnl": 7.203487499999937,
+          "trades": 1
+        }
+      },
+      "parameters": {
+        "id": "retest-15-v1.5-r1.5",
+        "setup": "retest",
+        "openingMinutes": 15,
+        "relativeVolume": 1.5,
+        "rewardR": 1.5
+      },
+      "split": {
+        "start": "2024-10-15",
+        "end": "2025-10-14"
+      },
+      "slippageBps": 5,
+      "diagnostics": {
+        "invalidEntryGaps": 0,
+        "expiredOrders": 0,
+        "missingCloseBars": 0,
+        "ambiguousBars": 0,
+        "haltDate": null
+      },
+      "qualification": {
+        "passed": false,
+        "reasons": [
+          "insufficient trades",
+          "nonpositive net profit",
+          "profit factor below threshold",
+          "insufficient monthly consistency"
+        ]
+      }
+    },
+    {
+      "capital": 2000,
+      "endingValue": 1948.11,
+      "pnl": -51.89,
+      "returnPct": -2.59,
+      "trades": 52,
+      "winRatePct": 25,
+      "profitFactor": 0.5821871255619318,
+      "noLosses": false,
+      "maximumDailyDrawdownPct": 3.84,
+      "activeMonths": 10,
+      "positiveActiveMonthFraction": 0.3,
+      "score": -0.08565093281382091,
+      "months": {
+        "2024-10": {
+          "pnl": -6.141599999999926,
+          "trades": 2
+        },
+        "2024-11": {
+          "pnl": -1.0851487499999166,
+          "trades": 4
+        },
+        "2024-12": {
+          "pnl": -4.818902500000377,
+          "trades": 5
+        },
+        "2025-01": {
+          "pnl": -9.25556544999995,
+          "trades": 4
+        },
+        "2025-02": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-03": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-04": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-05": {
+          "pnl": -11.196214350000218,
+          "trades": 5
+        },
+        "2025-06": {
+          "pnl": 7.273697074999518,
+          "trades": 12
+        },
+        "2025-07": {
+          "pnl": -25.964446975000328,
+          "trades": 8
+        },
+        "2025-08": {
+          "pnl": -20.073791749999828,
+          "trades": 5
+        },
+        "2025-09": {
+          "pnl": 9.860881249999693,
+          "trades": 6
+        },
+        "2025-10": {
+          "pnl": 9.513487499999883,
+          "trades": 1
+        }
+      },
+      "parameters": {
+        "id": "retest-15-v1.5-r2",
+        "setup": "retest",
+        "openingMinutes": 15,
+        "relativeVolume": 1.5,
+        "rewardR": 2
+      },
+      "split": {
+        "start": "2024-10-15",
+        "end": "2025-10-14"
+      },
+      "slippageBps": 5,
+      "diagnostics": {
+        "invalidEntryGaps": 0,
+        "expiredOrders": 0,
+        "missingCloseBars": 0,
+        "ambiguousBars": 0,
+        "haltDate": null
+      },
+      "qualification": {
+        "passed": false,
+        "reasons": [
+          "insufficient trades",
+          "nonpositive net profit",
+          "profit factor below threshold",
+          "insufficient monthly consistency"
+        ]
+      }
+    },
+    {
+      "capital": 2000,
+      "endingValue": 1869.06,
+      "pnl": -130.94,
+      "returnPct": -6.55,
+      "trades": 93,
+      "winRatePct": 22.58,
+      "profitFactor": 0.3833952012316208,
+      "noLosses": false,
+      "maximumDailyDrawdownPct": 6.55,
+      "activeMonths": 10,
+      "positiveActiveMonthFraction": 0,
+      "score": -0.24870410735025295,
+      "months": {
+        "2024-10": {
+          "pnl": -11.062702249999802,
+          "trades": 3
+        },
+        "2024-11": {
+          "pnl": -19.79702860000043,
+          "trades": 9
+        },
+        "2024-12": {
+          "pnl": -14.946096950000538,
+          "trades": 7
+        },
+        "2025-01": {
+          "pnl": -6.239891250000255,
+          "trades": 5
+        },
+        "2025-02": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-03": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-04": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-05": {
+          "pnl": -15.298384349999424,
+          "trades": 12
+        },
+        "2025-06": {
+          "pnl": -11.622858975000554,
+          "trades": 23
+        },
+        "2025-07": {
+          "pnl": -9.143474749999768,
+          "trades": 8
+        },
+        "2025-08": {
+          "pnl": -11.895564124999964,
+          "trades": 11
+        },
+        "2025-09": {
+          "pnl": -19.246846575000745,
+          "trades": 9
+        },
+        "2025-10": {
+          "pnl": -11.686238875000072,
+          "trades": 6
+        }
+      },
+      "parameters": {
+        "id": "retest-30-v1-r1.5",
+        "setup": "retest",
+        "openingMinutes": 30,
+        "relativeVolume": 1,
+        "rewardR": 1.5
+      },
+      "split": {
+        "start": "2024-10-15",
+        "end": "2025-10-14"
+      },
+      "slippageBps": 5,
+      "diagnostics": {
+        "invalidEntryGaps": 0,
+        "expiredOrders": 0,
+        "missingCloseBars": 0,
+        "ambiguousBars": 0,
+        "haltDate": null
+      },
+      "qualification": {
+        "passed": false,
+        "reasons": [
+          "nonpositive net profit",
+          "profit factor below threshold",
+          "insufficient monthly consistency"
+        ]
+      }
+    },
+    {
+      "capital": 2000,
+      "endingValue": 1871.48,
+      "pnl": -128.52,
+      "returnPct": -6.43,
+      "trades": 93,
+      "winRatePct": 22.58,
+      "profitFactor": 0.400651769355124,
+      "noLosses": false,
+      "maximumDailyDrawdownPct": 6.43,
+      "activeMonths": 10,
+      "positiveActiveMonthFraction": 0,
+      "score": -0.2311569462129691,
+      "months": {
+        "2024-10": {
+          "pnl": -11.062702249999802,
+          "trades": 3
+        },
+        "2024-11": {
+          "pnl": -18.487028600000485,
+          "trades": 9
+        },
+        "2024-12": {
+          "pnl": -14.946096950000538,
+          "trades": 7
+        },
+        "2025-01": {
+          "pnl": -6.239891250000255,
+          "trades": 5
+        },
+        "2025-02": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-03": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-04": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-05": {
+          "pnl": -15.298384349999424,
+          "trades": 12
+        },
+        "2025-06": {
+          "pnl": -7.31848397500039,
+          "trades": 23
+        },
+        "2025-07": {
+          "pnl": -9.943181000000095,
+          "trades": 8
+        },
+        "2025-08": {
+          "pnl": -14.696702875000028,
+          "trades": 11
+        },
+        "2025-09": {
+          "pnl": -19.722251575000655,
+          "trades": 9
+        },
+        "2025-10": {
+          "pnl": -10.803736374999744,
+          "trades": 6
+        }
+      },
+      "parameters": {
+        "id": "retest-30-v1-r2",
+        "setup": "retest",
+        "openingMinutes": 30,
+        "relativeVolume": 1,
+        "rewardR": 2
+      },
+      "split": {
+        "start": "2024-10-15",
+        "end": "2025-10-14"
+      },
+      "slippageBps": 5,
+      "diagnostics": {
+        "invalidEntryGaps": 0,
+        "expiredOrders": 0,
+        "missingCloseBars": 0,
+        "ambiguousBars": 0,
+        "haltDate": null
+      },
+      "qualification": {
+        "passed": false,
+        "reasons": [
+          "nonpositive net profit",
+          "profit factor below threshold",
+          "insufficient monthly consistency"
+        ]
+      }
+    },
+    {
+      "capital": 2000,
+      "endingValue": 1965.46,
+      "pnl": -34.54,
+      "returnPct": -1.73,
+      "trades": 27,
+      "winRatePct": 29.63,
+      "profitFactor": 0.5228882652999511,
+      "noLosses": false,
+      "maximumDailyDrawdownPct": 2.1,
+      "activeMonths": 8,
+      "positiveActiveMonthFraction": 0,
+      "score": -0.0982206652428357,
+      "months": {
+        "2024-10": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2024-11": {
+          "pnl": -5.250855000000456,
+          "trades": 4
+        },
+        "2024-12": {
+          "pnl": -3.656121249999842,
+          "trades": 3
+        },
+        "2025-01": {
+          "pnl": -5.305070000000114,
+          "trades": 1
+        },
+        "2025-02": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-03": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-04": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-05": {
+          "pnl": -3.6278843499994764,
+          "trades": 5
+        },
+        "2025-06": {
+          "pnl": -6.013303899999983,
+          "trades": 8
+        },
+        "2025-07": {
+          "pnl": -3.8532799999998133,
+          "trades": 1
+        },
+        "2025-08": {
+          "pnl": -4.0241974999999,
+          "trades": 1
+        },
+        "2025-09": {
+          "pnl": -2.8081993750001857,
+          "trades": 4
+        },
+        "2025-10": {
+          "pnl": 0,
+          "trades": 0
+        }
+      },
+      "parameters": {
+        "id": "retest-30-v1.5-r1.5",
+        "setup": "retest",
+        "openingMinutes": 30,
+        "relativeVolume": 1.5,
+        "rewardR": 1.5
+      },
+      "split": {
+        "start": "2024-10-15",
+        "end": "2025-10-14"
+      },
+      "slippageBps": 5,
+      "diagnostics": {
+        "invalidEntryGaps": 0,
+        "expiredOrders": 0,
+        "missingCloseBars": 0,
+        "ambiguousBars": 0,
+        "haltDate": null
+      },
+      "qualification": {
+        "passed": false,
+        "reasons": [
+          "insufficient trades",
+          "nonpositive net profit",
+          "profit factor below threshold",
+          "insufficient monthly consistency"
+        ]
+      }
+    },
+    {
+      "capital": 2000,
+      "endingValue": 1975,
+      "pnl": -25,
+      "returnPct": -1.25,
+      "trades": 27,
+      "winRatePct": 29.63,
+      "profitFactor": 0.6546713982313775,
+      "noLosses": false,
+      "maximumDailyDrawdownPct": 1.8,
+      "activeMonths": 8,
+      "positiveActiveMonthFraction": 0,
+      "score": -0.06349050682493851,
+      "months": {
+        "2024-10": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2024-11": {
+          "pnl": -3.9408550000005107,
+          "trades": 4
+        },
+        "2024-12": {
+          "pnl": -3.656121249999842,
+          "trades": 3
+        },
+        "2025-01": {
+          "pnl": -5.305070000000114,
+          "trades": 1
+        },
+        "2025-02": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-03": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-04": {
+          "pnl": 0,
+          "trades": 0
+        },
+        "2025-05": {
+          "pnl": -1.6278843499994764,
+          "trades": 5
+        },
+        "2025-06": {
+          "pnl": -2.1833039000000554,
+          "trades": 8
+        },
+        "2025-07": {
+          "pnl": -3.8532799999998133,
+          "trades": 1
+        },
+        "2025-08": {
+          "pnl": -4.0241974999999,
+          "trades": 1
+        },
+        "2025-09": {
+          "pnl": -0.4081993750005495,
+          "trades": 4
+        },
+        "2025-10": {
+          "pnl": 0,
+          "trades": 0
+        }
+      },
+      "parameters": {
+        "id": "retest-30-v1.5-r2",
+        "setup": "retest",
+        "openingMinutes": 30,
+        "relativeVolume": 1.5,
+        "rewardR": 2
+      },
+      "split": {
+        "start": "2024-10-15",
+        "end": "2025-10-14"
+      },
+      "slippageBps": 5,
+      "diagnostics": {
+        "invalidEntryGaps": 0,
+        "expiredOrders": 0,
+        "missingCloseBars": 0,
+        "ambiguousBars": 0,
+        "haltDate": null
+      },
+      "qualification": {
+        "passed": false,
+        "reasons": [
+          "insufficient trades",
+          "nonpositive net profit",
+          "profit factor below threshold",
+          "insufficient monthly consistency"
+        ]
+      }
+    }
+  ],
+  "selectedBeforeValidationAndTest": "2026-10-16T06:12:49.520Z"
+}

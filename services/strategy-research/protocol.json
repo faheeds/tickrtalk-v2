@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "name": "Selective morning momentum research",
+  "status": "research_only",
+  "registeredBeforeCandidateResults": true,
+  "period": {"start":"2024-10-15","end":"2026-10-15"},
+  "splits": {
+    "development":{"start":"2024-10-15","end":"2025-10-14"},
+    "validation":{"start":"2025-10-15","end":"2026-04-14"},
+    "test":{"start":"2026-04-15","end":"2026-10-15"}
+  },
+  "symbols":["AAPL","MSFT","NVDA","AMZN","GOOGL","META","JPM","XOM","JNJ","WMT","AMD","AVGO","ORCL","CRM","ADBE","COST","HD","PG","KO","PEP","ABBV","MRK","UNH","CVX","COP","CAT","GE","BA","GS","BAC"],
+  "marketProxy":"SPY",
+  "feed":"sip",
+  "adjustment":"split",
+  "grid":{"setup":["breakout","retest"],"openingMinutes":[15,30],"relativeVolume":[1,1.5],"rewardR":[1.5,2]},
+  "risk":{"capital":2000,"riskPct":0.25,"maxPositions":2,"maxPositionFraction":0.5,"maxTradesPerDay":2,"dailyLossPct":0.75,"flattenMinutes":5,"maxHoldingMinutes":90,"entryExpiryMinutes":2,"maxEntrySlipPct":0.1,"minStopPct":0.25,"maxStopPct":1.5,"maxAccountDrawdownPct":8},
+  "costs":{"baselineSlippageBps":5,"stressSlippageBps":10,"spreadBps":2.5,"sellFeePerShare":0.01},
+  "qualification":{"developmentTrades":60,"validationTrades":20,"testTrades":20,"developmentProfitFactor":1.15,"validationProfitFactor":1.1,"testProfitFactor":1.1,"minimumPositiveActiveMonthFraction":0.6,"minimumActiveMonths":{"development":8,"validation":4,"test":4},"maximumDailyDrawdownPct":8},
+  "selection":"Rank eligible development candidates by mean daily return divided by daily return standard deviation, then by lower drawdown and stable candidate ID. If none qualifies, report the highest scoring diagnostic candidate but do not promote it. Freeze selection before evaluating validation or test. Reject unless all splits and stress conditions qualify.",
+  "constraints":["stocks_only","long_only","whole_shares","cash_only","no_martingale","no_averaging_down","no_overnight"],
+  "limitations":["Historical AAOIFI decisions unavailable: technical research only, never execution authorization.","Current membership introduces survivorship and selection bias.","Earlier project backtests exposed this historical period: chronological separation here is retrospective, not a pristine project-wide holdout.","Thirty hand-selected stocks are not a full S&P 500 robustness test.","SIP historical access does not establish real-time SIP entitlement.","No profitability guarantee; prospective paper validation remains mandatory."]
+}

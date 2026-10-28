@@ -1,0 +1,396 @@
+{
+  "experiment": "broad-liquid-stocks-2026-10-16",
+  "status": "research_complete",
+  "generatedAt": "2026-10-16T20:26:32.303Z",
+  "period": {
+    "start": "2024-10-15",
+    "end": "2026-10-15",
+    "warmup": "2024-04-01"
+  },
+  "catalogCount": 4681,
+  "eligibleCount": 1842,
+  "sp500EligibleCount": 492,
+  "selected": {
+    "id": "daily_opportunities-vwap_reclaim",
+    "arm": "daily_opportunities",
+    "setup": "vwap_reclaim",
+    "developmentQualified": false
+  },
+  "comparisons": [
+    {
+      "id": "sp500-morning_breakout",
+      "arm": "sp500",
+      "setup": "morning_breakout",
+      "phases": {
+        "development": {
+          "returnPct": -7.62,
+          "pnl": -152.3,
+          "trades": 223,
+          "profitFactor": 0.5422551940717457,
+          "maximumDailyDrawdownPct": 7.84,
+          "qualified": false,
+          "stressReturnPct": -7.76
+        },
+        "validation": {
+          "returnPct": -2.15,
+          "pnl": -43.04,
+          "trades": 107,
+          "profitFactor": 0.7031403968681824,
+          "maximumDailyDrawdownPct": 3.07,
+          "qualified": false,
+          "stressReturnPct": -3.98
+        },
+        "test": {
+          "returnPct": -3.16,
+          "pnl": -63.18,
+          "trades": 162,
+          "profitFactor": 0.7349379626574426,
+          "maximumDailyDrawdownPct": 3.75,
+          "qualified": false,
+          "stressReturnPct": -5.38
+        }
+      }
+    },
+    {
+      "id": "sp500-vwap_reclaim",
+      "arm": "sp500",
+      "setup": "vwap_reclaim",
+      "phases": {
+        "development": {
+          "returnPct": -4.36,
+          "pnl": -87.18,
+          "trades": 157,
+          "profitFactor": 0.5996111724855058,
+          "maximumDailyDrawdownPct": 4.62,
+          "qualified": false,
+          "stressReturnPct": -7.27
+        },
+        "validation": {
+          "returnPct": -0.52,
+          "pnl": -10.38,
+          "trades": 58,
+          "profitFactor": 0.8514977716008493,
+          "maximumDailyDrawdownPct": 0.97,
+          "qualified": false,
+          "stressReturnPct": -1.62
+        },
+        "test": {
+          "returnPct": -3.8,
+          "pnl": -76.07,
+          "trades": 72,
+          "profitFactor": 0.3797104996072213,
+          "maximumDailyDrawdownPct": 4.04,
+          "qualified": false,
+          "stressReturnPct": -4.98
+        }
+      }
+    },
+    {
+      "id": "broad_liquid-morning_breakout",
+      "arm": "broad_liquid",
+      "setup": "morning_breakout",
+      "phases": {
+        "development": {
+          "returnPct": -7.58,
+          "pnl": -151.68,
+          "trades": 262,
+          "profitFactor": 0.6345297031323899,
+          "maximumDailyDrawdownPct": 7.92,
+          "qualified": false,
+          "stressReturnPct": -7.64
+        },
+        "validation": {
+          "returnPct": -1.32,
+          "pnl": -26.33,
+          "trades": 115,
+          "profitFactor": 0.8394372911217332,
+          "maximumDailyDrawdownPct": 2.07,
+          "qualified": false,
+          "stressReturnPct": -3.37
+        },
+        "test": {
+          "returnPct": -3.06,
+          "pnl": -61.15,
+          "trades": 184,
+          "profitFactor": 0.7902004464761311,
+          "maximumDailyDrawdownPct": 4.72,
+          "qualified": false,
+          "stressReturnPct": -5.93
+        }
+      }
+    },
+    {
+      "id": "broad_liquid-vwap_reclaim",
+      "arm": "broad_liquid",
+      "setup": "vwap_reclaim",
+      "phases": {
+        "development": {
+          "returnPct": -7.62,
+          "pnl": -152.45,
+          "trades": 205,
+          "profitFactor": 0.5118108635413562,
+          "maximumDailyDrawdownPct": 7.82,
+          "qualified": false,
+          "stressReturnPct": -8.2
+        },
+        "validation": {
+          "returnPct": -4.16,
+          "pnl": -83.21,
+          "trades": 77,
+          "profitFactor": 0.40382649191811676,
+          "maximumDailyDrawdownPct": 4.42,
+          "qualified": false,
+          "stressReturnPct": -5.44
+        },
+        "test": {
+          "returnPct": -6.85,
+          "pnl": -137.09,
+          "trades": 117,
+          "profitFactor": 0.37301486772912734,
+          "maximumDailyDrawdownPct": 7.06,
+          "qualified": false,
+          "stressReturnPct": -7.73
+        }
+      }
+    },
+    {
+      "id": "daily_opportunities-morning_breakout",
+      "arm": "daily_opportunities",
+      "setup": "morning_breakout",
+      "phases": {
+        "development": {
+          "returnPct": -0.62,
+          "pnl": -12.39,
+          "trades": 28,
+          "profitFactor": 0.6879865238376658,
+          "maximumDailyDrawdownPct": 1.01,
+          "qualified": false,
+          "stressReturnPct": -0.82
+        },
+        "validation": {
+          "returnPct": 0.45,
+          "pnl": 8.96,
+          "trades": 7,
+          "profitFactor": 1.7835180243641329,
+          "maximumDailyDrawdownPct": 0.32,
+          "qualified": false,
+          "stressReturnPct": 0.34
+        },
+        "test": {
+          "returnPct": -0.66,
+          "pnl": -13.18,
+          "trades": 18,
+          "profitFactor": 0.7194941004926255,
+          "maximumDailyDrawdownPct": 1.21,
+          "qualified": false,
+          "stressReturnPct": -1.02
+        }
+      }
+    },
+    {
+      "id": "daily_opportunities-vwap_reclaim",
+      "arm": "daily_opportunities",
+      "setup": "vwap_reclaim",
+      "phases": {
+        "development": {
+          "returnPct": -0.16,
+          "pnl": -3.26,
+          "trades": 8,
+          "profitFactor": 0.686924075248499,
+          "maximumDailyDrawdownPct": 0.27,
+          "qualified": false,
+          "stressReturnPct": -0.27
+        },
+        "validation": {
+          "returnPct": 0.05,
+          "pnl": 1.08,
+          "trades": 3,
+          "profitFactor": 1.5114721169441072,
+          "maximumDailyDrawdownPct": 0.11,
+          "qualified": false,
+          "stressReturnPct": 0.01
+        },
+        "test": {
+          "returnPct": -0.04,
+          "pnl": -0.88,
+          "trades": 2,
+          "profitFactor": 0,
+          "maximumDailyDrawdownPct": 0.04,
+          "qualified": false,
+          "stressReturnPct": -0.07
+        }
+      }
+    }
+  ],
+  "shortlistDate": "2026-10-15",
+  "shortlist": [
+    {
+      "symbol": "MMED",
+      "relativeVolume": 23.929792364976567,
+      "gapPct": -1.0113027959547827,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "FER",
+      "relativeVolume": 10.393046301887914,
+      "gapPct": 2.4307631002191687,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "MKSI",
+      "relativeVolume": 7.0131823732837235,
+      "gapPct": -4.443496801705749,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "MAIR",
+      "relativeVolume": 6.746146845550891,
+      "gapPct": -1.2457044673539586,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "KMB",
+      "relativeVolume": 6.439072517374827,
+      "gapPct": 3.118398551453594,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "FTAI",
+      "relativeVolume": 6.46361191624724,
+      "gapPct": -1.9908116385911168,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "FHN",
+      "relativeVolume": 6.4793483429752206,
+      "gapPct": -1.455668284075884,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "ABG",
+      "relativeVolume": 6.337597890982399,
+      "gapPct": 3.3154287831079765,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "CGNX",
+      "relativeVolume": 6.097868424232846,
+      "gapPct": -3.300157150340488,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "ARMK",
+      "relativeVolume": 6.251064201630319,
+      "gapPct": 0.7214611872146115,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "MRSH",
+      "relativeVolume": 6.090738133448856,
+      "gapPct": 2.4663677130044803,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "PNC",
+      "relativeVolume": 6.012131101021566,
+      "gapPct": -3.3873957367933305,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "BLDR",
+      "relativeVolume": 5.795414872570697,
+      "gapPct": 3.7806809184481427,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "LQDA",
+      "relativeVolume": 5.6545452169709005,
+      "gapPct": 2.9169121979964796,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "PIPR",
+      "relativeVolume": 5.5006780580417685,
+      "gapPct": -0.7444168734491385,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "LGN",
+      "relativeVolume": 5.283762001541804,
+      "gapPct": -2.3602761077710865,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "SCHW",
+      "relativeVolume": 5.0534542094449275,
+      "gapPct": -3.5175619834710736,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "NVMI",
+      "relativeVolume": 5.136972844010947,
+      "gapPct": -1.4756472931377829,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "GEV",
+      "relativeVolume": 4.850094336797341,
+      "gapPct": -3.9053706810507682,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    },
+    {
+      "symbol": "INDV",
+      "relativeVolume": 4.880713657494661,
+      "gapPct": 2.4297423887587932,
+      "screeningStatus": "unverified",
+      "catalystStatus": "unverified"
+    }
+  ],
+  "risk": {
+    "capital": 2000,
+    "riskDollars": 5,
+    "maxTradesPerDay": 2,
+    "dailyLossDollars": 15,
+    "maxHoldingMinutes": 90
+  },
+  "rejection": [
+    "No development combination qualified.",
+    "development baseline: insufficient trades, nonpositive net profit, profit factor below threshold, insufficient active months, insufficient monthly consistency, missing minute bars during exposure",
+    "development stress: insufficient trades, nonpositive net profit, profit factor below threshold, insufficient active months, insufficient monthly consistency, missing minute bars during exposure",
+    "validation baseline: insufficient trades, insufficient active months, insufficient monthly consistency, missing minute bars during exposure",
+    "validation stress: insufficient trades, profit factor below threshold, insufficient active months, insufficient monthly consistency, missing minute bars during exposure",
+    "test baseline: insufficient trades, nonpositive net profit, profit factor below threshold, insufficient active months, insufficient monthly consistency, missing minute bars during exposure",
+    "test stress: insufficient trades, nonpositive net profit, profit factor below threshold, insufficient active months, insufficient monthly consistency, missing minute bars during exposure",
+    "Positive mean test return was not established by the block bootstrap.",
+    "Historical AAOIFI eligibility, time-stamped catalysts, point-in-time universe and live feed compatibility are not verified.",
+    "4 stock-sessions failed the nominal-price consistency audit and were excluded before returns were calculated."
+  ],
+  "limitations": [
+    "Current listing and current S&P 500 snapshots are not point-in-time historical membership; results are survivorship-biased diagnostics.",
+    "Previous experiments exposed these dates. Chronological separation is retrospective and cannot be claimed as a pristine holdout.",
+    "Without historical AAOIFI and time-stamped catalysts, these runs evaluate price/volume selection proxies only.",
+    "Fifteen-minute completed bars generate decisions; one-minute bars are required for every potential trading session to simulate execution.",
+    "Nominal session scaling is reconstructed from raw and split-adjusted opening prices and requires matching-series validation; it is not a full corporate-action or historical-symbol audit.",
+    "Historical SIP access does not establish real-time SIP permission."
+  ],
+  "executionEnabled": false
+}

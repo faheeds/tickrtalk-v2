@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Google Fonts ─────────────────────────────────────────── */
+
+/* ─── Design tokens ─────────────────────────────────────────── */
+:root {
+  --bg:           #05080F;
+  --surface:      #0C1220;
+  --surface-2:    #121A2E;
+  --border:       rgba(255,255,255,0.07);
+  --border-hi:    rgba(255,255,255,0.14);
+
+  --brand:        #6366F1;
+  --brand-light:  #818CF8;
+  --brand-glow:   rgba(99,102,241,0.2);
+
+  --up:           #00C9A7;
+  --up-dim:       rgba(0,201,167,0.12);
+  --down:         #F43F5E;
+  --down-dim:     rgba(244,63,94,0.12);
+
+  --ink-1:        #EEF2FF;
+  --ink-2:        #94A3B8;
+  --ink-3:        #475569;
+
+  --font-sans:    'Inter', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+  --font-inter:   'Inter';
+  --font-mono-family: 'JetBrains Mono';
+}
+
+/* ─── Base ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+body {
+  background: var(--bg);
+  color: var(--ink-1);
+  font-family: var(--font-sans);
+  min-height: 100dvh;
+  position: relative;
+}
+
+/* Ambient mesh gradient – ultra subtle */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 100% 60% at 5% -10%, rgba(99,102,241,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 55% at 95% 110%, rgba(56,189,248,0.04) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 50% 50%, rgba(139,92,246,0.02) 0%, transparent 70%);
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* ─── Cards ─────────────────────────────────────────────────── */
+.card {
+  background: rgba(12, 18, 32, 0.75);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.45);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 60%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.card:hover {
+  border-color: var(--border-hi);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.55);
+}
+
+.card-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Featured card with brand accent top border */
+.card-featured {
+  border-top-color: rgba(99,102,241,0.6);
+  box-shadow: 0 0 40px rgba(99,102,241,0.08), 0 4px 32px rgba(0,0,0,0.45);
+}
+
+/* Metric card – no padding override, larger number display */
+.card-metric {
+  padding: 20px 24px;
+}
+
+/* ─── Buttons ───────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 9px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(99,102,241,0.35), 0 1px 0 rgba(255,255,255,0.12) inset;
+  transition: box-shadow 0.2s ease, transform 0.15s ease, opacity 0.15s ease;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 22px rgba(99,102,241,0.5), 0 1px 0 rgba(255,255,255,0.15) inset;
+  transform: translateY(-1px);
+}
+
+.btn-primary:active { transform: translateY(0); opacity: 0.92; }
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.06);
+  color: var(--ink-1);
+  font-weight: 500;
+  font-size: 13px;
+  padding: 9px 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: var(--ink-2);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 9px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.06);
+  color: var(--ink-1);
+}
+
+/* ─── Form controls ─────────────────────────────────────────── */
+.input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--ink-1);
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  color-scheme: dark;
+}
+
+.input::placeholder { color: var(--ink-3); }
+
+.input:focus {
+  border-color: rgba(99,102,241,0.5);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+}
+
+.select {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--ink-1);
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  color-scheme: dark;
+}
+
+.select:focus { border-color: rgba(99,102,241,0.5); }
+
+/* ─── Badge system ──────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 99px;
+  border: 1px solid;
+}
+
+.badge-halal    { background: rgba(0,201,167,0.12);  color: #00C9A7; border-color: rgba(0,201,167,0.3); }
+.badge-haram    { background: rgba(244,63,94,0.12);  color: #F43F5E; border-color: rgba(244,63,94,0.3); }
+.badge-doubtful { background: rgba(251,191,36,0.12); color: #FCD34D; border-color: rgba(251,191,36,0.3); }
+.badge-unknown  { background: rgba(255,255,255,0.06); color: var(--ink-3); border-color: rgba(255,255,255,0.1); }
+.badge-paper    { background: rgba(251,191,36,0.12); color: #FCD34D; border-color: rgba(251,191,36,0.25); }
+.badge-live     { background: rgba(0,201,167,0.12);  color: #00C9A7; border-color: rgba(0,201,167,0.25); }
+
+/* ─── P&L colors ────────────────────────────────────────────── */
+.pnl-up   { color: var(--up);   }
+.pnl-down { color: var(--down); }
+
+/* ─── Tables ────────────────────────────────────────────────── */
+.data-table { width: 100%; border-collapse: collapse; }
+
+.data-table thead tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.data-table th {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding: 0 16px 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.data-table th.text-right { text-align: right; }
+
+.data-table td {
+  padding: 13px 16px;
+  font-size: 13px;
+  color: var(--ink-2);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.15s ease;
+}
+
+.data-table tbody tr:last-child td { border-bottom: none; }
+
+.data-table tbody tr:hover td {
+  background: rgba(255,255,255,0.025);
+}
+
+/* ─── Stat number typography ─────────────────────────────────── */
+.stat-num {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* ─── Nav active glow ───────────────────────────────────────── */
+.nav-active-dot {
+  width: 4px;
+  height: 32px;
+  background: linear-gradient(180deg, #6366F1, #8B5CF6);
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 0 10px rgba(99,102,241,0.6);
+}
+
+/* ─── Loading skeleton ──────────────────────────────────────── */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+/* ─── Section headings ──────────────────────────────────────── */
+.section-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* ─── Live indicator ────────────────────────────────────────── */
+@keyframes livePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,201,167,0.4); }
+  50% { box-shadow: 0 0 0 4px rgba(0,201,167,0); }
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--up);
+  border-radius: 50%;
+  animation: livePulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* ─── Divider ───────────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0;
+}

@@ -1,0 +1,755 @@
+{
+  "status": "evidence_requires_review",
+  "date": "2026-10-15",
+  "asOf": "2026-10-15T13:45:00.000Z",
+  "evidence": {
+    "MMED": [
+      {
+        "id": "62377622",
+        "symbol": "MMED",
+        "headline": "Jim Cramer: This Health Care Stock Is A ‘Winner’, X-Energy Is ‘Losing Too Much Money’",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/10/62377622/jim-cramer-this-health-care-stock-is-a-winner-x-energy-is-losing-too-much-money",
+        "publishedAt": "2026-10-15T11:58:18Z",
+        "updatedAt": "2026-10-15T11:58:18Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62350165",
+        "symbol": "MMED",
+        "headline": "Medtronic Announces Oversubscribed MiniMed Exchange Offer Results; Accepts 55,032,401 Of Its Shares For All Remaining 252,813,348 MiniMed Shares",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/quote/MMED",
+        "publishedAt": "2026-10-14T12:06:52Z",
+        "updatedAt": "2026-10-14T12:06:52Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62321924",
+        "symbol": "MMED",
+        "headline": "Top 10 Powder Keg Stocks Where Short Sellers Are Sitting on a Fuse",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62321924/top-10-powder-keg-stocks-where-short-sellers-are-sitting-on-a-fuse",
+        "publishedAt": "2026-10-13T12:45:11Z",
+        "updatedAt": "2026-10-13T12:45:11Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62297020",
+        "symbol": "MMED",
+        "headline": "Medtronic’s Previously Announced MiniMed Share Exchange Offer Oversubscribed As Company Moves To Exchange Remaining 252,813,348 Shares; 4.5939 Shares Of MiniMed Common Stock Will Be Exchanged For Each Medtronic Ordinary Share Accepted In The Exchange Offer",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62297020/medtronic-s-previously-announced-minimed-share-exchange-offer-oversubscribed-company-moves-exchange-",
+        "publishedAt": "2026-10-12T12:50:12Z",
+        "updatedAt": "2026-10-12T12:50:13Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62295723",
+        "symbol": "MMED",
+        "headline": "Jefferies Initiates Coverage On Minimed Group with Hold Rating, Announces Price Target of $22",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62295723/jefferies-initiates-coverage-minimed-group-hold-rating-announces-price-target-22",
+        "publishedAt": "2026-10-12T12:03:50Z",
+        "updatedAt": "2026-10-12T12:03:50Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      }
+    ],
+    "FER": [],
+    "MKSI": [],
+    "MAIR": [
+      {
+        "id": "62355611",
+        "symbol": "MAIR",
+        "headline": "RBC Capital Maintains Outperform on Madison Air Solutions, Lowers Price Target to $35",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62355611/rbc-capital-maintains-outperform-madison-air-solutions-lowers-price-target-35",
+        "publishedAt": "2026-10-14T14:03:44Z",
+        "updatedAt": "2026-10-14T14:03:44Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62311564",
+        "symbol": "MAIR",
+        "headline": "Citigroup Maintains Buy on Madison Air Solutions, Lowers Price Target to $40",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62311564/citigroup-maintains-buy-madison-air-solutions-lowers-price-target-40",
+        "publishedAt": "2026-10-12T20:28:07Z",
+        "updatedAt": "2026-10-12T20:28:07Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      }
+    ],
+    "KMB": [
+      {
+        "id": "62376550",
+        "symbol": "KMB",
+        "headline": "Kimberly-Clark Reaffirms FY2026 Outlook After Preliminary Q3 Results, Says Weighted Average Category Growth Now ~1.7%",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/quote/KMB",
+        "publishedAt": "2026-10-15T11:08:12Z",
+        "updatedAt": "2026-10-15T11:08:12Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62332751",
+        "symbol": "KMB",
+        "headline": "TD Cowen Maintains Hold on Kimberly-Clark, Lowers Price Target to $97",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62332751/td-cowen-maintains-hold-kimberly-clark-lowers-price-target-97",
+        "publishedAt": "2026-10-13T16:29:52Z",
+        "updatedAt": "2026-10-13T16:29:52Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62326590",
+        "symbol": "KMB",
+        "headline": "EU Commission Approves Kimberly-Clark's Acquistion Of Kenvue, Conditional Upon Full Compliance Of Commitments Offered By Kimberly-Clark",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/m/26/10/62326590/eu-commission-approves-kimberly-clark-s-acquistion-kenvue-conditional-upon-full-compliance-commitmen",
+        "publishedAt": "2026-10-13T14:12:54Z",
+        "updatedAt": "2026-10-13T14:12:54Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      }
+    ],
+    "FTAI": [],
+    "FHN": [
+      {
+        "id": "62377176",
+        "symbol": "FHN",
+        "headline": "First Horizon Q3 Sales $407.000 Miss $889.960M Estimate",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/quote/FHN",
+        "publishedAt": "2026-10-15T11:33:04Z",
+        "updatedAt": "2026-10-15T11:33:04Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62376670",
+        "symbol": "FHN",
+        "headline": "Earnings Scheduled For October 15, 2026",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/earnings/26/10/62376670/earnings-scheduled-october-15-2026",
+        "publishedAt": "2026-10-15T11:11:48Z",
+        "updatedAt": "2026-10-15T11:11:48Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62375681",
+        "symbol": "FHN",
+        "headline": "First Horizon Q3 Adj. EPS $0.53, Inline",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/quote/FHN",
+        "publishedAt": "2026-10-15T10:32:40Z",
+        "updatedAt": "2026-10-15T10:32:40Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      }
+    ],
+    "ABG": [],
+    "CGNX": [
+      {
+        "id": "62310045",
+        "symbol": "CGNX",
+        "headline": "Barclays Maintains Overweight on Cognex, Raises Price Target to $85",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62310045/barclays-maintains-overweight-cognex-raises-price-target-85",
+        "publishedAt": "2026-10-12T19:20:52Z",
+        "updatedAt": "2026-10-12T19:20:52Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      }
+    ],
+    "ARMK": [
+      {
+        "id": "62312233",
+        "symbol": "ARMK",
+        "headline": "Citigroup Maintains Buy on Aramark, Raises Price Target to $75.5",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62312233/citigroup-maintains-buy-aramark-raises-price-target-75-5",
+        "publishedAt": "2026-10-12T21:01:15Z",
+        "updatedAt": "2026-10-12T21:01:15Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      }
+    ],
+    "MRSH": [
+      {
+        "id": "62382025",
+        "symbol": "MRSH",
+        "headline": "Marsh Q3 2026 Earnings Call Transcript",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62382025/marsh-q3-2026-earnings-call-transcript",
+        "publishedAt": "2026-10-15T13:40:11Z",
+        "updatedAt": "2026-10-15T13:40:11Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62376670",
+        "symbol": "MRSH",
+        "headline": "Earnings Scheduled For October 15, 2026",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/earnings/26/10/62376670/earnings-scheduled-october-15-2026",
+        "publishedAt": "2026-10-15T11:11:48Z",
+        "updatedAt": "2026-10-15T11:11:48Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62376306",
+        "symbol": "MRSH",
+        "headline": "Marsh Q3 Adj. EPS $2.03 Beats $1.97 Estimate, Sales $6.863B Beat $6.639B Estimate",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/earnings/26/10/62376306/marsh-q3-adj-eps-2-03-beats-1-97-estimate-sales-6-863b-beat-6-639b-estimate",
+        "publishedAt": "2026-10-15T11:00:38Z",
+        "updatedAt": "2026-10-15T11:00:38Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62373905",
+        "symbol": "MRSH",
+        "headline": "'Marsh To Shoulder Biggest Chunk Of Greensill Settlement With Credit Suisse' - FT",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62373905/marsh-shoulder-biggest-chunk-greensill-settlement-credit-suisse-ft",
+        "publishedAt": "2026-10-15T07:59:10Z",
+        "updatedAt": "2026-10-15T07:59:10Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62358518",
+        "symbol": "MRSH",
+        "headline": "A Congress Member Sold Up To $995K In Devon Energy Stock: Here's What You Need To Know",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/government/26/10/62358518/congress-member-sold-995k-devon-energy-stock-here-s-what-you-need-know",
+        "publishedAt": "2026-10-14T15:00:11Z",
+        "updatedAt": "2026-10-14T15:00:11Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62303012",
+        "symbol": "MRSH",
+        "headline": "Wells Fargo Maintains Equal-Weight on Marsh, Lowers Price Target to $183",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62303012/wells-fargo-maintains-equal-weight-marsh-lowers-price-target-183",
+        "publishedAt": "2026-10-12T15:28:32Z",
+        "updatedAt": "2026-10-12T15:28:32Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      }
+    ],
+    "PNC": [
+      {
+        "id": "62376670",
+        "symbol": "PNC",
+        "headline": "Earnings Scheduled For October 15, 2026",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/earnings/26/10/62376670/earnings-scheduled-october-15-2026",
+        "publishedAt": "2026-10-15T11:11:48Z",
+        "updatedAt": "2026-10-15T11:11:48Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62375736",
+        "symbol": "PNC",
+        "headline": "PNC Financial Services Gr Raises FY2026 Sales Guidance from $26.102B to $26.264B vs $26.329B Est",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62375736/pnc-financial-services-gr-raises-fy2026-sales-guidance-26-102b-26-264b-vs-26-329b-est",
+        "publishedAt": "2026-10-15T10:34:02Z",
+        "updatedAt": "2026-10-15T10:34:02Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62375725",
+        "symbol": "PNC",
+        "headline": "PNC Finl Servs Gr Q3 Adj. EPS $5.09 Beats $4.92 Estimate, Sales $6.562B Miss $6.610B Estimate",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/earnings/26/10/62375725/pnc-finl-servs-gr-q3-adj-eps-5-09-beats-4-92-estimate-sales-6-562b-miss-6-610b-estimate",
+        "publishedAt": "2026-10-15T10:33:36Z",
+        "updatedAt": "2026-10-15T10:33:36Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62375134",
+        "symbol": "PNC",
+        "headline": "JPMorgan, Bank of America, Wells Fargo Among 9 Banks Accused of Political, Religious Debanking by OCC",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/financing/26/10/62375134/jpmorgan-wells-fargo-among-9-largest-us-banks-that-restricted-customer-access-over-political-and-religious-views-occ-finds",
+        "publishedAt": "2026-10-15T10:10:39Z",
+        "updatedAt": "2026-10-15T10:10:39Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62373047",
+        "symbol": "PNC",
+        "headline": "Charles Schwab, US Bancorp And 3 Stocks To Watch Heading Into Thursday",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/10/62373047/charles-schwab-us-bancorp-and-3-stocks-to-watch-heading-into-thursday",
+        "publishedAt": "2026-10-15T06:29:03Z",
+        "updatedAt": "2026-10-15T06:29:03Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62373026",
+        "symbol": "PNC",
+        "headline": "Nasdaq Tumbles Over 500 Points After Inflation Data: Investor Sentiment Weakens Further, Greed Index Remains In ‘Fear’ Zone",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/market-summary/26/10/62373026/nasdaq-tumbles-over-500-points-after-inflation-data-investor-sentiment-weakens-further-greed-index-remains-in-fear-zone",
+        "publishedAt": "2026-10-15T06:23:17Z",
+        "updatedAt": "2026-10-15T06:23:18Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62349214",
+        "symbol": "PNC",
+        "headline": "'Nine Big Banks Engaged in Debanking Practices, US Regulator Says' - Bloomberg",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62349214/nine-big-banks-engaged-debanking-practices-us-regulator-says-bloomberg",
+        "publishedAt": "2026-10-14T11:39:10Z",
+        "updatedAt": "2026-10-14T11:39:10Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      }
+    ],
+    "BLDR": [],
+    "LQDA": [
+      {
+        "id": "62375474",
+        "symbol": "LQDA",
+        "headline": "HC Wainwright & Co. Maintains Buy on Liquidia, Raises Price Target to $65",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62375474/hc-wainwright-co-maintains-buy-liquidia-raises-price-target-65",
+        "publishedAt": "2026-10-15T10:20:47Z",
+        "updatedAt": "2026-10-15T10:20:47Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62363232",
+        "symbol": "LQDA",
+        "headline": "12 Health Care Stocks Moving In Wednesday's Intraday Session",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62363232/12-health-care-stocks-moving-wednesday-s-intraday-session",
+        "publishedAt": "2026-10-14T17:06:27Z",
+        "updatedAt": "2026-10-14T17:06:27Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62363006",
+        "symbol": "LQDA",
+        "headline": "Nasdaq Dips Over 400 Points; Bank of America Shares Tumble After Q3 Results",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/market-summary/26/10/62363006/nasdaq-dips-over-400-points-bank-of-america-shares-tumble-after-q3-results",
+        "publishedAt": "2026-10-14T17:00:06Z",
+        "updatedAt": "2026-10-14T17:00:06Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62358617",
+        "symbol": "LQDA",
+        "headline": "Wells Fargo Maintains Equal-Weight on Liquidia, Raises Price Target to $33",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62358617/wells-fargo-maintains-equal-weight-liquidia-raises-price-target-33",
+        "publishedAt": "2026-10-14T15:01:56Z",
+        "updatedAt": "2026-10-14T15:01:56Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62355551",
+        "symbol": "LQDA",
+        "headline": "Bending Spoons, Liquidia, Verastem And Other Big Stocks Moving Higher On Wednesday",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62355551/bending-spoons-liquidia-verastem-and-other-big-stocks-moving-higher-on-wednesday",
+        "publishedAt": "2026-10-14T14:02:33Z",
+        "updatedAt": "2026-10-14T14:02:33Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62346692",
+        "symbol": "LQDA",
+        "headline": "Stock Market Today: S&P 500, Dow, Nasdaq Futures Gain Even as September Inflation Report Comes In Hotter Than Expected— ASML, AZZ, GME in Focus (UPDATED)",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/equities/26/10/62346692/stock-market-today-sp-500-dow-jones-futures-gain-as-investors-await-september-inflation-report-asml-gme-unh-in-focus",
+        "publishedAt": "2026-10-14T12:39:42Z",
+        "updatedAt": "2026-10-14T12:39:55Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62350707",
+        "symbol": "LQDA",
+        "headline": "This Albemarle Analyst Turns Bullish; Here Are Top 4 Upgrades For Wednesday",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/analyst-stock-ratings/upgrades/26/10/62350707/this-albemarle-analyst-turns-bullish-here-are-top-4-upgrades-for-wednesday",
+        "publishedAt": "2026-10-14T12:21:20Z",
+        "updatedAt": "2026-10-14T12:21:20Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62350112",
+        "symbol": "LQDA",
+        "headline": "12 Health Care Stocks Moving In Wednesday's Pre-Market Session",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62350112/12-health-care-stocks-moving-wednesday-s-pre-market-session",
+        "publishedAt": "2026-10-14T12:06:24Z",
+        "updatedAt": "2026-10-14T12:06:24Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62349905",
+        "symbol": "LQDA",
+        "headline": "Liquidia Settles Bitter Fight With United Therapeutics",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/health-care/26/10/62349905/liquidia-settles-bitter-fight-with-united-therapeutics",
+        "publishedAt": "2026-10-14T12:02:30Z",
+        "updatedAt": "2026-10-14T12:02:30Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62347351",
+        "symbol": "LQDA",
+        "headline": "Needham Maintains Buy on Liquidia, Lowers Price Target to $58",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62347351/needham-maintains-buy-liquidia-lowers-price-target-58",
+        "publishedAt": "2026-10-14T10:11:46Z",
+        "updatedAt": "2026-10-14T10:11:46Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62346978",
+        "symbol": "LQDA",
+        "headline": "BTIG Upgrades Liquidia to Buy, Announces $70 Price Target",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62346978/btig-upgrades-liquidia-buy-announces-70-price-target",
+        "publishedAt": "2026-10-14T10:04:55Z",
+        "updatedAt": "2026-10-14T10:04:55Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62346005",
+        "symbol": "LQDA",
+        "headline": "Why Enovix Shares Are Trading Higher By Around 7%; Here Are 20 Stocks Moving Premarket",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62346005/why-enovix-shares-are-trading-higher-by-around-7-here-are-20-stocks-moving-premarket",
+        "publishedAt": "2026-10-14T08:51:49Z",
+        "updatedAt": "2026-10-14T08:51:49Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62344615",
+        "symbol": "LQDA",
+        "headline": "Liquidia Corporation Stock Is Trending In After-Hours Following United Therapeutics Settlement: What You Should Know",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/equities/26/10/62344615/liquidia-shares-surge-settlement-united-therapeutics",
+        "publishedAt": "2026-10-14T05:11:36Z",
+        "updatedAt": "2026-10-14T05:11:36Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62342794",
+        "symbol": "LQDA",
+        "headline": "Liquidia Will Continue To Advance YUTREPIA And L606 Clinical Programs As Previously Outlined;  Liquidia Has Submitted A Supplement To Remove The PH-ILD Indication From YUTREPIA’ ’s Label And No Longer Promotes It For PH-ILD",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62342794/liquidia-will-continue-advance-yutrepia-and-l606-clinical-programs-previously-outlined-liquidia-has-",
+        "publishedAt": "2026-10-13T21:52:48Z",
+        "updatedAt": "2026-10-13T21:52:48Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62342767",
+        "symbol": "LQDA",
+        "headline": "Liquidia Enters Into A Global Settlement Agreement With United Therapeutics That Resolves All Pending Litigation Between The Companies; Settlement Fully Resolves Six Ongoing Lawsuits Between Liquidia And United Therapeutics; Liquidia To Pay Net $380.70M In Installments In 2026 And 2027; Liquidia Will Make A Net Payment To UTHR Of $175M Within 30 Business Days",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62342767/liquidia-enters-global-settlement-agreement-united-therapeutics-resolves-all-pending-litigation-betw",
+        "publishedAt": "2026-10-13T21:49:54Z",
+        "updatedAt": "2026-10-13T21:49:55Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62299365",
+        "symbol": "LQDA",
+        "headline": "First Tracks Biotherapeutics, C3.ai, CCC Intelligent Solutions And Other Big Stocks Moving Higher On Monday",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/10/62299365/first-tracks-biotherapeutics-c3-ai-ccc-intelligent-solutions-and-other-big-stocks-moving-higher-on-monday",
+        "publishedAt": "2026-10-12T13:55:45Z",
+        "updatedAt": "2026-10-12T13:55:45Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      }
+    ],
+    "PIPR": [
+      {
+        "id": "62368235",
+        "symbol": "PIPR",
+        "headline": "'Perella Weinberg and Piper Sandler abandon merger talks' - Financial Times",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62368235/perella-weinberg-and-piper-sandler-abandon-merger-talks-financial-times",
+        "publishedAt": "2026-10-14T19:40:12Z",
+        "updatedAt": "2026-10-14T19:40:35Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      }
+    ],
+    "LGN": [],
+    "SCHW": [
+      {
+        "id": "62382438",
+        "symbol": "SCHW",
+        "headline": "Charles Schwab Q3 2026 Earnings Call: Complete Transcript",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62382438/charles-schwab-q3-2026-earnings-call-complete-transcript",
+        "publishedAt": "2026-10-15T13:43:27Z",
+        "updatedAt": "2026-10-15T13:43:27Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62380860",
+        "symbol": "SCHW",
+        "headline": "Charles Schwab Pulls in Record $190 Billion in New Assets",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/large-cap/26/10/62380860/charles-schwab-pulls-in-record-190-billion-in-new-assets",
+        "publishedAt": "2026-10-15T13:14:41Z",
+        "updatedAt": "2026-10-15T13:14:41Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62377081",
+        "symbol": "SCHW",
+        "headline": "Charles Schwab Q3 Adj. EPS $1.69 Beats $1.66 Estimate, Sales $7.171B Miss $7.192B Estimate",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/earnings/26/10/62377081/charles-schwab-q3-adj-eps-1-69-beats-1-66-estimate-sales-7-171b-miss-7-192b-estimate",
+        "publishedAt": "2026-10-15T11:30:28Z",
+        "updatedAt": "2026-10-15T11:30:28Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62376670",
+        "symbol": "SCHW",
+        "headline": "Earnings Scheduled For October 15, 2026",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/earnings/26/10/62376670/earnings-scheduled-october-15-2026",
+        "publishedAt": "2026-10-15T11:11:48Z",
+        "updatedAt": "2026-10-15T11:11:48Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62373047",
+        "symbol": "SCHW",
+        "headline": "Charles Schwab, US Bancorp And 3 Stocks To Watch Heading Into Thursday",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/10/62373047/charles-schwab-us-bancorp-and-3-stocks-to-watch-heading-into-thursday",
+        "publishedAt": "2026-10-15T06:29:03Z",
+        "updatedAt": "2026-10-15T06:29:03Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62373026",
+        "symbol": "SCHW",
+        "headline": "Nasdaq Tumbles Over 500 Points After Inflation Data: Investor Sentiment Weakens Further, Greed Index Remains In ‘Fear’ Zone",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/market-summary/26/10/62373026/nasdaq-tumbles-over-500-points-after-inflation-data-investor-sentiment-weakens-further-greed-index-remains-in-fear-zone",
+        "publishedAt": "2026-10-15T06:23:17Z",
+        "updatedAt": "2026-10-15T06:23:18Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62373003",
+        "symbol": "SCHW",
+        "headline": "Stock Market: Will S&P 500 Open Up or Down Today?",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/10/62373003/stock-market-will-sp-500-open-up-or-down-today-58",
+        "publishedAt": "2026-10-15T06:16:08Z",
+        "updatedAt": "2026-10-15T06:16:09Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62368010",
+        "symbol": "SCHW",
+        "headline": "Charles Schwab Could Swing $6.23 Billion After Earnings",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/options/26/10/62368010/charles-schwab-could-swing-6-23-billion-after-earnings",
+        "publishedAt": "2026-10-14T19:30:08Z",
+        "updatedAt": "2026-10-14T19:30:08Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62361021",
+        "symbol": "SCHW",
+        "headline": "If You Invested $100 In Charles Schwab Stock 15 Years Ago, You Would Have This Much Today",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62361021/if-you-invested-100-charles-schwab-stock-15-years-ago-you-would-have-much-today",
+        "publishedAt": "2026-10-14T16:00:27Z",
+        "updatedAt": "2026-10-14T16:00:27Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62350727",
+        "symbol": "SCHW",
+        "headline": "How To Earn $500 A Month From Charles Schwab Stock Ahead Of Q3 Earnings",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/dividends/26/10/62350727/how-to-earn-500-a-month-from-charles-schwab-stock-ahead-of-q3-earnings",
+        "publishedAt": "2026-10-14T12:21:34Z",
+        "updatedAt": "2026-10-14T12:21:34Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62322736",
+        "symbol": "SCHW",
+        "headline": "Truist Securities Maintains Buy on Charles Schwab, Lowers Price Target to $125",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62322736/truist-securities-maintains-buy-charles-schwab-lowers-price-target-125",
+        "publishedAt": "2026-10-13T13:01:38Z",
+        "updatedAt": "2026-10-13T13:01:38Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62306101",
+        "symbol": "SCHW",
+        "headline": "TD Cowen Maintains Buy on Charles Schwab, Raises Price Target to $129",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62306101/td-cowen-maintains-buy-charles-schwab-raises-price-target-129",
+        "publishedAt": "2026-10-12T16:53:15Z",
+        "updatedAt": "2026-10-12T16:53:15Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62294547",
+        "symbol": "SCHW",
+        "headline": "Evercore ISI Group Initiates Coverage On Charles Schwab with In-Line Rating, Announces Price Target of $107",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62294547/evercore-isi-group-initiates-coverage-charles-schwab-line-rating-announces-price-target-107",
+        "publishedAt": "2026-10-12T11:10:02Z",
+        "updatedAt": "2026-10-12T11:10:02Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62294205",
+        "symbol": "SCHW",
+        "headline": "In The Big Bank Earnings Week, EUV Machine Maker ASML Could Swing $42.8 Billion After Earnings",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/earnings/26/10/62294205/in-the-big-bank-earnings-week-euv-machine-maker-asml-could-swing-42-8-billion-after-earnings",
+        "publishedAt": "2026-10-12T11:01:15Z",
+        "updatedAt": "2026-10-12T11:01:15Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      }
+    ],
+    "NVMI": [],
+    "GEV": [
+      {
+        "id": "62374855",
+        "symbol": "GEV",
+        "headline": "Venture Global Enters Power And Grid Frame Agreements With GE Vernova And Baker Hughes Energy Services For Up To Sixteen 720 MW Power Island Units And Associated Power Transformer Equipment",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62374855/venture-global-enters-power-and-grid-frame-agreements-ge-vernova-and-baker-hughes-energy-services-si",
+        "publishedAt": "2026-10-15T10:05:00Z",
+        "updatedAt": "2026-10-15T10:05:00Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62353105",
+        "symbol": "GEV",
+        "headline": "Meta To Rally More Than 11%? Here Are 10 Top Analyst Forecasts For Wednesday",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/analyst-stock-ratings/price-target/26/10/62353105/meta-to-rally-more-than-11-here-are-10-top-analyst-forecasts-for-wednesday",
+        "publishedAt": "2026-10-14T13:20:12Z",
+        "updatedAt": "2026-10-14T13:20:12Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62350154",
+        "symbol": "GEV",
+        "headline": "Susquehanna Maintains Positive on GE Vernova, Lowers Price Target to $1270",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62350154/susquehanna-maintains-positive-ge-vernova-lowers-price-target-1270",
+        "publishedAt": "2026-10-14T12:06:48Z",
+        "updatedAt": "2026-10-14T12:06:48Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62339353",
+        "symbol": "GEV",
+        "headline": "Watching GE Vernova; Hearing Investor Business Daily SwingTrader Buys Stock",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/quote/GEV",
+        "publishedAt": "2026-10-13T19:54:00Z",
+        "updatedAt": "2026-10-13T19:54:00Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62322522",
+        "symbol": "GEV",
+        "headline": "Guggenheim Reiterates Buy on GE Vernova, Maintains $1450 Price Target",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/10/62322522/guggenheim-reiterates-buy-ge-vernova-maintains-1450-price-target",
+        "publishedAt": "2026-10-13T13:00:16Z",
+        "updatedAt": "2026-10-13T13:00:16Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      },
+      {
+        "id": "62301427",
+        "symbol": "GEV",
+        "headline": "Steve Eisman Warns S&P 500 Is One Giant AI Bet: 'I Own NVDA and I Worry'",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/10/62301427/steve-eisman-sp500-ai-bet-nvidia-ge-vernova",
+        "publishedAt": "2026-10-12T14:46:23Z",
+        "updatedAt": "2026-10-12T14:46:23Z",
+        "status": "evidence_requires_review",
+        "verified": false
+      }
+    ],
+    "INDV": []
+  },
+  "historicalCoverage": "latest shortlist only; not a full-period catalyst filter"
+}
