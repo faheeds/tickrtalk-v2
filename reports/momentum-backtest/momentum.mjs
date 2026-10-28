@@ -11,6 +11,20 @@
 //   - Whole shares, no leverage, no shorting. Each entrant gets (current equity ÷ N), capped by available cash.
 //   - Costs: spread 2.5 bps + slippage (5 bps baseline, 15 bps stress) on every fill.
 import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+
+/** Loads reports/momentum-backtest/data/sp500_ticker_start_end.csv into a predicate (symbol, isoDate) => boolean. */
+export function loadMembership(path){
+  const intervals=new Map()
+  for(const line of readFileSync(path,'utf8').split(/\r?\n/).slice(1)){
+    if(!line.trim())continue
+    const [ticker,start,end]=line.split(',').map(v=>v.trim())
+    const key=ticker.replace('.','-')
+    if(!intervals.has(key))intervals.set(key,[])
+    intervals.get(key).push([start,end||'9999-12-31'])
+  }
+  return (symbol,date)=>(intervals.get(symbol.replace('.','-'))??[]).some(([a,b])=>date>=a&&date<=b)
+}
 
 const day=d=>d.toISOString().slice(0,10),round=v=>Math.round(v*100)/100
 const LOOKBACK=252,SKIP=21,SPY_SMA=200
@@ -21,11 +35,12 @@ export function momentumScores(bars,i){
   return recent>0&&old>0?recent/old-1:null
 }
 
-export function simulateMomentum({data,sessions,spy=null,topN=15,marketFilter=false,capital=25000,slippageBps=5,spreadBps=2.5}){
+export function simulateMomentum({data,sessions,spy=null,topN=15,marketFilter=false,capital=25000,slippageBps=5,spreadBps=2.5,eligible=null}){
+  // topN 'all' holds every eligible name equal weight: the universe benchmark, run through the same engine.
   const slip=slippageBps/10000,spread=spreadBps/10000
   const index=Object.fromEntries(Object.entries(data).map(([s,bars])=>[s,new Map(bars.map((b,i)=>[day(b.date),i]))]))
   const spyIndex=spy?new Map(spy.map((b,i)=>[day(b.date),i])):null
-  const positions=new Map(),trades=[],curve=[],rebalances=[];let cash=capital,settling=0,pendingBuys=[],peak=capital,maxDrawdown=0,exposureSum=0,turnover=0
+  const positions=new Map(),trades=[],curve=[],rebalances=[];let cash=capital,settling=0,pendingBuys=[],peak=capital,maxDrawdown=0,exposureSum=0,turnover=0,equitySum=0,slotCount=topN
   const priceAt=(symbol,date,field='close')=>{const i=index[symbol].get(date);return i===undefined?null:data[symbol][i][field]}
   const value=date=>cash+settling+[...positions.values()].reduce((s,p)=>s+p.qty*(priceAt(p.symbol,date)??p.last),0)
   const sell=(p,price,date,reason)=>{const fill=round(price*(1-spread-slip));settling+=p.qty*fill;turnover+=p.qty*fill;positions.delete(p.symbol);trades.push({symbol:p.symbol,qty:p.qty,entry:p.entry,exit:fill,entryDate:p.entryDate,exitDate:date,reason,pnl:round(p.qty*(fill-p.entry)),returnPct:round((fill/p.entry-1)*100)})}
@@ -34,11 +49,13 @@ export function simulateMomentum({data,sessions,spy=null,topN=15,marketFilter=fa
     cash+=settling;settling=0
     // Buys queued at the previous rebalance fill at today's open.
     if(pendingBuys.length){
-      const equity=value(date),slot=equity/topN
+      const equity=value(date),slot=equity/slotCount
       for(const symbol of pendingBuys){
         const open=priceAt(symbol,date,'open');if(!open||positions.has(symbol))continue
-        const fill=round(open*(1+spread+slip)),qty=Math.floor(Math.min(slot,cash)/fill)
-        if(qty<1)continue
+        // The 'all' benchmark uses fractional shares: with ~190 names, $25,000 cannot hold a whole share of each,
+        // and the benchmark measures the universe, not a tradable plan.
+        const fill=round(open*(1+spread+slip)),qty=topN==='all'?Math.min(slot,cash)/fill:Math.floor(Math.min(slot,cash)/fill)
+        if(qty<=0||(topN!=='all'&&qty<1))continue
         cash-=qty*fill;turnover+=qty*fill;positions.set(symbol,{symbol,qty,entry:fill,entryDate:date,last:fill})
       }
       pendingBuys=[]
@@ -50,10 +67,12 @@ export function simulateMomentum({data,sessions,spy=null,topN=15,marketFilter=fa
       const ranked=[]
       for(const symbol of Object.keys(data)){
         const i=index[symbol].get(date);if(i===undefined)continue
+        if(eligible&&!eligible(symbol,date))continue
         const score=momentumScores(data[symbol],i);if(score!==null)ranked.push({symbol,score})
       }
       ranked.sort((a,b)=>b.score-a.score||a.symbol.localeCompare(b.symbol))
-      const top=new Set(ranked.slice(0,topN).map(r=>r.symbol))
+      slotCount=topN==='all'?Math.max(1,ranked.length):topN
+      const top=new Set((topN==='all'?ranked:ranked.slice(0,topN)).map(r=>r.symbol))
       let riskOn=true
       if(marketFilter){
         const i=spyIndex?.get(date)
@@ -70,7 +89,7 @@ export function simulateMomentum({data,sessions,spy=null,topN=15,marketFilter=fa
     // Mark positions and record the curve.
     for(const p of positions.values()){const c=priceAt(p.symbol,date);if(c)p.last=c}
     const equity=value(date),invested=equity-cash-settling
-    peak=Math.max(peak,equity);maxDrawdown=Math.max(maxDrawdown,(peak-equity)/peak*100);exposureSum+=invested/equity
+    peak=Math.max(peak,equity);maxDrawdown=Math.max(maxDrawdown,(peak-equity)/peak*100);exposureSum+=invested/equity;equitySum+=equity
     curve.push({date,equity:round(equity),cash:round(cash+settling),positions:positions.size})
   }
   const lastDate=sessions.at(-1)
@@ -84,5 +103,5 @@ export function simulateMomentum({data,sessions,spy=null,topN=15,marketFilter=fa
   return {capital,ending:round(cash),pnl:round(cash-capital),returnPct:round((cash/capital-1)*100),cagrPct:years>0?round((Math.pow(cash/capital,1/years)-1)*100):null,
     maxDrawdownPct:round(maxDrawdown),closedTrades:trades.length,winRatePct:trades.length?round(wins.length/trades.length*100):null,
     profitFactor:grossLoss>0?round(grossWin/grossLoss):(grossWin>0?Infinity:null),averageExposurePct:round(exposureSum/Math.max(1,sessions.length)*100),
-    annualTurnoverPct:round(turnover/capital/Math.max(years,1e-9)*100/2),rebalances:rebalances.length,monthsInCash:rebalances.filter(r=>!r.riskOn).length,trades,curve,rebalanceLog:rebalances}
+    annualTurnoverPct:round(turnover/(equitySum/Math.max(1,sessions.length))/Math.max(years,1e-9)*100/2),rebalances:rebalances.length,monthsInCash:rebalances.filter(r=>!r.riskOn).length,trades,curve,rebalanceLog:rebalances}
 }

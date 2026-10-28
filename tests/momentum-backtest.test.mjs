@@ -56,3 +56,16 @@ test('higher slippage never improves the result',()=>{
   const stress=simulateMomentum({data,sessions,topN:2,capital:25000,slippageBps:15})
   assert.ok(stress.ending<=base.ending)
 })
+
+test('point-in-time membership gates eligibility and the universe benchmark holds everything equal weight',async()=>{
+  const {loadMembership}=await import('../reports/momentum-backtest/momentum.mjs')
+  const inIndex=loadMembership('reports/momentum-backtest/data/sp500_ticker_start_end.csv')
+  assert.equal(inIndex('SMCI','2023-06-01'),false);assert.equal(inIndex('SMCI','2024-06-03'),true)
+  assert.equal(inIndex('NVDA','2017-01-03'),true);assert.equal(inIndex('AAL','2010-01-04'),false)
+  const data={A:series(0.001),B:series(0.0008,50),C:series(0.0006,20)}
+  const gated=simulateMomentum({data,sessions,topN:2,capital:25000,eligible:(s)=>s!=='A'})
+  assert.ok(!gated.trades.some(t=>t.symbol==='A'),'ineligible name was traded')
+  const all=simulateMomentum({data,sessions,topN:'all',capital:25000})
+  assert.ok(all.curve.slice(300).every(c=>c.positions===3),'universe benchmark should hold every name')
+  assert.ok(all.averageExposurePct>50)
+})
