@@ -29,20 +29,11 @@ export function loadMembership(path){
 const day=d=>d.toISOString().slice(0,10),round=v=>Math.round(v*100)/100
 const LOOKBACK=252,SKIP=21,SPY_SMA=200
 
-/** Annualized volatility of daily close-to-close returns over the `window` sessions ending at bar i-1. */
-export function trailingVol(bars,i,window=63){
-  if(i-window-1<0)return null
-  let sum=0,sum2=0,n=0
-  for(let k=i-window;k<i;k++){const r=bars[k].close/bars[k-1].close-1;sum+=r;sum2+=r*r;n++}
-  const mean=sum/n,variance=sum2/n-mean*mean
-  return variance>0?Math.sqrt(variance*252):null
-}
-
-export function momentumScores(bars,i,lookback=LOOKBACK,skip=SKIP){
-  if(i<lookback)return null
-  const recent=bars[i-skip]?.close,old=bars[i-lookback]?.close
-  return recent>0&&old>0?recent/old-1:null
-}
+// The score and volatility functions live in services/paper/momentum.mjs so the engine ranks exactly as the
+// research did. momentumScores keeps its research-era name as an alias.
+import {momentumScore,trailingVol} from '../../services/paper/momentum.mjs'
+export {trailingVol}
+export function momentumScores(bars,i,lookback=LOOKBACK,skip=SKIP){return momentumScore(bars,i,lookback,skip)}
 
 export function simulateMomentum({data,sessions,spy=null,topN=15,marketFilter=false,capital=25000,slippageBps=5,spreadBps=2.5,eligible=null,lookback=LOOKBACK,skip=SKIP,rebalanceSession=0,rankBy='raw',sectorOf=null,sectorMax=Infinity,volTarget=null,volWindow=63}){
   // Drawdown controls (all off by default):
