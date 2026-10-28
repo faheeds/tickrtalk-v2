@@ -81,3 +81,29 @@ test('lookback and rebalance day are parameters with the published defaults',()=
   const short=simulateMomentum({data,sessions,topN:2,capital:25000,lookback:126})
   assert.ok(short.closedTrades>=1)
 })
+
+test('drawdown controls: sector cap, risk-adjusted ranking and volatility targeting behave as specified',async()=>{
+  const {trailingVol}=await import('../reports/momentum-backtest/momentum.mjs')
+  // Six names: three strong in sector X, three weaker in sector Y.
+  const data={X1:series(0.0016),X2:series(0.0015,50),X3:series(0.0014,20),Y1:series(0.0008,80),Y2:series(0.0007,30),Y3:series(0.0006,10)}
+  const sectorOf=s=>s[0]
+  const plain=simulateMomentum({data,sessions,topN:3,capital:25000})
+  assert.deepEqual([...new Set(plain.trades.map(t=>t.symbol))].sort(),['X1','X2','X3'],'plain should hold the three strongest')
+  const capped=simulateMomentum({data,sessions,topN:3,capital:25000,sectorOf,sectorMax:2})
+  const held=new Set(capped.trades.map(t=>t.symbol))
+  assert.ok(held.has('Y1')&&!held.has('X3'),'sector cap should swap the third X for the best Y: '+[...held])
+  // Risk-adjusted ranking: a volatile name with the same raw score ranks below a calm one.
+  let p=100;const wild=toBars(sessions.map((d,i)=>{p*=1+0.0012+(i%2?0.03:-0.03);return {t:d+'T05:00:00Z',o:+p.toFixed(2),h:+(p*1.01).toFixed(2),l:+(p*0.99).toFixed(2),c:+p.toFixed(2),v:1e6}}))
+  const vW=trailingVol(wild,400),vC=trailingVol(data.X1,400)
+  assert.ok(vW>vC*3,'synthetic wild series should be far more volatile')
+  const ra=simulateMomentum({data:{WILD:wild,CALM:data.X1,OTHER:data.Y1},sessions,topN:1,capital:25000,rankBy:'riskAdjusted'})
+  assert.ok(!ra.trades.some(t=>t.symbol==='WILD'),'risk-adjusted ranking should avoid the wild name')
+  // Volatility targeting: with noisy series, a low target reduces exposure below 100%.
+  const noisy=(drift,start,seed)=>{let p=start;return toBars(sessions.map((d,i)=>{p*=1+drift+Math.sin(i*seed)*0.02;return {t:d+'T05:00:00Z',o:+(p*0.999).toFixed(2),h:+(p*1.01).toFixed(2),l:+(p*0.99).toFixed(2),c:+p.toFixed(2),v:1e6}}))}
+  const noisyData={A:noisy(0.0012,100,1.7),B:noisy(0.0010,50,2.3),C:noisy(0.0008,20,3.1),D:noisy(0.0004,70,4.3)}
+  const full=simulateMomentum({data:noisyData,sessions,topN:3,capital:25000})
+  const vt=simulateMomentum({data:noisyData,sessions,topN:3,capital:25000,volTarget:0.05})
+  assert.ok(vt.averageExposureFraction<0.9&&vt.averageExposurePct<full.averageExposurePct,JSON.stringify({f:vt.averageExposureFraction,e:vt.averageExposurePct,full:full.averageExposurePct}))
+  assert.ok(vt.maxDrawdownPct<=full.maxDrawdownPct,'targeting should not deepen the drawdown on noisy data')
+  assert.ok(vt.curve.every(c=>c.cash>=-1e-6))
+})
