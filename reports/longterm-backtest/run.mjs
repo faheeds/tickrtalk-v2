@@ -10,7 +10,7 @@
 // A continuous replay runs the whole period in one account. Do not add phase returns together.
 import {existsSync,mkdirSync,readFileSync,writeFileSync} from 'node:fs'
 import {DEFAULT_DRAFT} from '../../services/paper/core.mjs'
-import {buyAndHold,simulate,toBars} from './simulate.mjs'
+import {buyAndHold,precomputeSignals,simulate,toBars} from './simulate.mjs'
 
 const args=Object.fromEntries(process.argv.slice(2).map((a,i,all)=>a.startsWith('--')?[a.slice(2),all[i+1]]:[]).filter(Boolean))
 const root='.local-run/longterm/',out='reports/longterm-backtest/'
@@ -30,14 +30,16 @@ for(const symbol of meta.universe){
 }
 const bench={};for(const symbol of meta.benchmarks){const path=`${root}${symbol}-1Day.json`;if(existsSync(path))bench[symbol]=toBars(JSON.parse(readFileSync(path,'utf8')))}
 
-const results={generatedAt:new Date().toISOString(),universeMode:meta.universeMode,universeAsOf:meta.universeAsOf,symbols:Object.keys(data).length,capital,profile,risk,phases:{},coverage}
+console.error('precomputing signals for',Object.keys(data).length,'symbols')
+const signals=precomputeSignals(data,profile)
+const results={generatedAt:new Date().toISOString(),feed:meta.feed,universeMode:meta.universeMode,universeAsOf:meta.universeAsOf,symbols:Object.keys(data).length,capital,profile,risk,phases:{},coverage}
 const variants=[['published',5],['published',15],['equal',5],['equal',15]]
 const allTrades=[],allCurves=[]
 for(const [name,[start,end]] of Object.entries(phases)){
   const sessions=sessionsAll.filter(d=>d>=start&&d<=end);if(!sessions.length)continue
   const phase={start,end,sessions:sessions.length,variants:{},benchmarks:{}}
   for(const [sizing,slippageBps] of variants){
-    const r=simulate({data,sessions,profile,risk,capital,sizing,slippageBps})
+    const r=simulate({data,sessions,profile,risk,capital,sizing,slippageBps,signals})
     const key=`${sizing}_${slippageBps}bps`;phase.variants[key]={...r,trades:undefined,curve:undefined}
     if(slippageBps===5){allTrades.push(...r.trades.map(t=>({phase:name,sizing,...t})));allCurves.push(...r.curve.map(c=>({phase:name,sizing,...c})))}
   }
@@ -54,8 +56,8 @@ writeFileSync(out+'trades.csv',csv(allTrades,['phase','sizing','symbol','qty','e
 writeFileSync(out+'daily-values.csv',csv(allCurves,['phase','sizing','date','equity','cash','positions']))
 
 const pct=v=>v==null?'n/a':(v>0?'+':'')+v.toFixed(2)+'%',num=v=>v==null?'n/a':(v===Infinity?'∞':String(v))
-let md=`# Long-term trend strategy backtest\n\nGenerated ${results.generatedAt}. Universe: ${meta.universeMode} (${results.symbols} symbols with enough history; snapshot ${meta.universeAsOf}). Capital per phase: $${capital.toLocaleString()}. Rules: fast SMA ${profile.fastSma}, slow SMA ${profile.slowSma}, momentum ${profile.momentumDays} days, RSI ${profile.rsiMin} to ${profile.rsiMax}, stop at slow SMA × 0.98, max ${risk.maxPositions} positions, risk ${risk.riskPct}% per entry, max order $${risk.maxOrder}.\n\n`
-md+=`This is an indicative simulation of the published price rules on Alpaca IEX daily bars, adjustment=all. The universe is the current S&P 500 snapshot (survivorship bias) filtered by the static halal list in lib/halal.ts, which is approximate and unverified; the production AAOIFI gate was not applied. Entries fill at the next open plus costs; exits at the open or stop. Whole shares, no leverage. Do not add phase returns.\n\n`
+let md=`# Long-term trend strategy backtest\n\nGenerated ${results.generatedAt}. Universe: ${meta.universeMode} (${results.symbols} symbols with enough history; snapshot ${meta.universeAsOf}). Feed: ${meta.feed}. Capital per phase: $${capital.toLocaleString()}. Rules: fast SMA ${profile.fastSma}, slow SMA ${profile.slowSma}, momentum ${profile.momentumDays} days, RSI ${profile.rsiMin} to ${profile.rsiMax}, stop at slow SMA × 0.98, max ${risk.maxPositions} positions, risk ${risk.riskPct}% per entry, max order $${risk.maxOrder}.\n\n`
+md+=`This is an indicative simulation of the published price rules on Alpaca ${String(meta.feed).toUpperCase()} daily bars, adjustment=all. The universe is the current S&P 500 snapshot (survivorship bias) filtered by the static halal list in lib/halal.ts, which is approximate and unverified; the production AAOIFI gate was not applied. Entries fill at the next open plus costs; exits at the open or stop. Whole shares, no leverage. Do not add phase returns.\n\n`
 md+=`"Published" sizing is the engine's risk-per-trade rule. "Equal" sizing (capital ÷ max positions) is a diagnostic to measure capital left idle by the published rule; it is not what the engine does.\n\n`
 for(const [name,phase] of Object.entries(results.phases)){
   md+=`## ${name} (${phase.start} to ${phase.end}, ${phase.sessions} sessions)\n\n| Variant | Return | CAGR | Max drawdown | Trades | Win rate | Profit factor | Avg hold (days) | Avg exposure |\n| :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |\n`

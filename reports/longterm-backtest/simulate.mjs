@@ -21,9 +21,25 @@ export function toBars(raw){
 }
 const day=d=>d.toISOString().slice(0,10)
 
+/** Signals depend only on price history, so compute them once per symbol and session and share across runs. */
+export function precomputeSignals(data,profile){
+  const out={}
+  for(const [symbol,bars] of Object.entries(data)){
+    const map=new Map()
+    for(let i=0;i<bars.length;i++){
+      const history=bars.slice(Math.max(0,i-600),i)
+      if(history.length<252)continue
+      const signal=evaluate('longterm',history,profile,{});if(signal)map.set(day(bars[i].date),signal)
+    }
+    out[symbol]=map
+  }
+  return out
+}
+
 /** Simulate one phase. `data` = {symbol: bars[]} (full history, warmup included). `sessions` = ISO dates. */
-export function simulate({data,sessions,profile,risk,capital=25000,sizing='published',slippageBps=5,spreadBps=2.5,maxEntriesPerDay=Infinity}){
+export function simulate({data,sessions,profile,risk,capital=25000,sizing='published',slippageBps=5,spreadBps=2.5,maxEntriesPerDay=Infinity,signals=null}){
   const slip=slippageBps/10000,spread=spreadBps/10000
+  signals??=precomputeSignals(data,profile)
   const index=Object.fromEntries(Object.entries(data).map(([s,bars])=>[s,new Map(bars.map((b,i)=>[day(b.date),i]))]))
   const positions=new Map(),trades=[],curve=[];let cash=capital,settling=0,peak=capital,maxDrawdown=0,exposureSum=0
   const value=last=>cash+settling+[...positions.values()].reduce((s,p)=>s+p.qty*(last.get(p.symbol)??p.entry),0)
@@ -34,31 +50,30 @@ export function simulate({data,sessions,profile,risk,capital=25000,sizing='publi
   }
   for(const date of sessions){
     cash+=settling;settling=0
-    const last=new Map(),today={},history={}
+    const last=new Map(),today={}
     for(const symbol of Object.keys(data)){
       const i=index[symbol].get(date);if(i===undefined)continue
-      today[symbol]=data[symbol][i];history[symbol]=data[symbol].slice(Math.max(0,i-600),i)
-      last.set(symbol,data[symbol][i].open)
+      today[symbol]=data[symbol][i];last.set(symbol,data[symbol][i].open)
     }
     // Exits first, using completed bars through the previous session.
     for(const p of [...positions.values()]){
       const bar=today[p.symbol];if(!bar)continue
       p.days++
-      const decision=evaluate('longterm',history[p.symbol],profile,{})
+      const decision=signals[p.symbol].get(date)
       if(decision?.side==='sell')sell(p,bar.open,date,'trend_exit')
       else if(bar.open<=p.stop)sell(p,bar.open,date,'stop_gap')
       else if(bar.low<=p.stop)sell(p,p.stop,date,'stop')
     }
     // Entries: rank qualifying signals by score, fill open slots.
-    const signals=[]
+    const candidates=[]
     for(const symbol of Object.keys(today)){
       if(positions.has(symbol))continue
-      const signal=evaluate('longterm',history[symbol],profile,{})
-      if(signal?.side==='buy')signals.push({symbol,signal})
+      const signal=signals[symbol].get(date)
+      if(signal?.side==='buy')candidates.push({symbol,signal})
     }
-    signals.sort((a,b)=>(b.signal.score??0)-(a.signal.score??0)||a.symbol.localeCompare(b.symbol))
+    candidates.sort((a,b)=>(b.signal.score??0)-(a.signal.score??0)||a.symbol.localeCompare(b.symbol))
     let entries=0
-    for(const {symbol,signal} of signals){
+    for(const {symbol,signal} of candidates){
       if(positions.size>=risk.maxPositions||entries>=maxEntriesPerDay)break
       const open=today[symbol].open,gross=[...positions.values()].reduce((s,p)=>s+p.qty*(last.get(p.symbol)??p.entry),0)
       let sized
