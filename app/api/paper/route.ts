@@ -3,7 +3,7 @@ import {paperAccess} from '@/lib/paper/access'
 export const runtime='nodejs'
 export const dynamic='force-dynamic'
 export const maxDuration=60
-const ownerActions=new Set(['refresh_sp500','save_draft','validate_draft','publish','halt','unhalt','scan','dry_run','smoke','flatten'])
+const ownerActions=new Set(['refresh_sp500','save_draft','validate_draft','publish','halt','unhalt','scan','dry_run','smoke','flatten','momentum_rank'])
 async function handle(req:Request){
   const access=await paperAccess(req)
   if(!access)return NextResponse.json({error:'Unauthorized'},{status:401})
