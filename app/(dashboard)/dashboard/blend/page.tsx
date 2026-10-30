@@ -100,8 +100,7 @@ export default function BlendPage() {
           <Link href="/dashboard/settings?tab=billing" className="btn-primary">Upgrade to Pro — $49/mo</Link>
         </div>
       )}
-      {d.migrated && d.pro && !d.broker.connected && <div className="card" style={{ padding: 16, fontSize: 13, color: 'var(--ink-2)' }}>Connect an Alpaca <b>paper</b> account in <Link href="/dashboard/settings" style={{ color: 'var(--accent)' }}>Settings</Link> to use Blend.</div>}
-      {d.migrated && d.pro && d.broker.connected && d.broker.paper !== true && <div className="card" style={{ padding: 16, fontSize: 13, color: 'var(--down)' }}>Your active Alpaca connection is a live account. Blend will not run on it. Switch to a paper connection in Settings.</div>}
+      {d.migrated && d.pro && !(d.broker.connected && d.broker.paper === true) && <ConnectPaper live={d.broker.connected} onDone={load} />}
 
       <div className="card" style={{ padding: 18, display: 'grid', gap: 14 }}>
         <div className="flex items-center justify-between flex-wrap gap-3">
@@ -182,6 +181,36 @@ export default function BlendPage() {
             [r.message, ...(r.errors ?? [])].filter(Boolean).join(' · ')])} />
         )}
       </Section>
+    </div>
+  )
+}
+
+function ConnectPaper({ live, onDone }: { live: boolean; onDone: () => void }) {
+  const [key, setKey] = useState('')
+  const [secret, setSecret] = useState('')
+  const [busy, setBusy] = useState(false)
+  const [err, setErr] = useState<string | null>(null)
+  async function connect() {
+    setBusy(true); setErr(null)
+    try {
+      const r = await fetch('/api/brokerage/alpaca', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ apiKey: key.trim(), apiSecret: secret.trim(), paper: true }) })
+      const j = await r.json().catch(() => ({}))
+      if (!r.ok) setErr(j.error ?? 'Could not connect.'); else { setKey(''); setSecret(''); onDone() }
+    } catch { setErr('Network error.') }
+    setBusy(false)
+  }
+  return (
+    <div className="card" style={{ padding: 18, display: 'grid', gap: 10 }}>
+      <b style={{ fontSize: 14, color: 'var(--ink-1)' }}>Connect an Alpaca paper account</b>
+      <p style={{ fontSize: 12.5, color: 'var(--ink-3)', lineHeight: 1.5 }}>
+        {live ? 'Your active Alpaca connection is a live account, and Blend will not run on it. Add paper keys below.' : 'Blend keeps its own paper connection, separate from the Algo Engine paper account.'} Use a dedicated paper account (Alpaca lets you create several) so Blend&apos;s trades do not mix with other strategies. Paper keys only: the connection is saved in paper mode.
+      </p>
+      <div className="flex gap-3 flex-wrap">
+        <input className="input" placeholder="Paper API key" autoComplete="off" value={key} onChange={e => setKey(e.target.value)} style={{ width: 240 }} />
+        <input className="input" placeholder="Paper API secret" type="password" autoComplete="new-password" value={secret} onChange={e => setSecret(e.target.value)} style={{ width: 240 }} />
+        <button className="btn-primary" disabled={busy || !key.trim() || !secret.trim()} onClick={connect}>{busy ? 'Checking…' : 'Connect'}</button>
+      </div>
+      {err && <p style={{ fontSize: 13, color: 'var(--down)' }}>{err}</p>}
     </div>
   )
 }
