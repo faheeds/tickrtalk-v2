@@ -149,6 +149,8 @@ export function createAlpacaClient(creds: AlpacaCreds) {
     limitPrice?: number
     stopPrice?: number
     targetPrice?: number
+    /** Explicit client_order_id (must be unique per account); lets callers look the order up later. */
+    clientOrderId?: string
     strategy?: string
   }
 
@@ -159,6 +161,7 @@ export function createAlpacaClient(creds: AlpacaCreds) {
     limitPrice,
     stopPrice,
     targetPrice,
+    clientOrderId,
     strategy = 'ALGO',
   }: PlaceOrderOptions) {
     if (side === 'sell') {
@@ -192,7 +195,7 @@ export function createAlpacaClient(creds: AlpacaCreds) {
         stop_loss: { stop_price: stopPrice!.toFixed(2) },
         take_profit: { limit_price: targetPrice!.toFixed(2) },
       }),
-      client_order_id: `tickrtalk_${strategy}_${Date.now()}`,
+      client_order_id: clientOrderId ?? `tickrtalk_${strategy}_${Date.now()}`,
     }
 
     try {
@@ -200,6 +203,25 @@ export function createAlpacaClient(creds: AlpacaCreds) {
       return { ok: true, orderId: order.id, status: order.status, order }
     } catch (e) {
       return { ok: false, message: (e as Error).message }
+    }
+  }
+
+  /** Look up one order by the client_order_id we assigned. Returns null if Alpaca has no such order. */
+  async function getOrderByClientId(clientOrderId: string) {
+    try {
+      const o = await tradeGet('/v2/orders:by_client_order_id', { client_order_id: clientOrderId })
+      return {
+        id:             o.id as string,
+        status:         o.status as string,
+        symbol:         o.symbol as string,
+        side:           o.side as string,
+        qty:            parseFloat(o.qty ?? '0'),
+        filledQty:      parseFloat(o.filled_qty ?? '0'),
+        filledAvgPrice: o.filled_avg_price ? parseFloat(o.filled_avg_price) : null,
+      }
+    } catch (e) {
+      if (/not found|40410000/i.test((e as Error).message)) return null
+      throw e
     }
   }
 
@@ -241,7 +263,13 @@ export function createAlpacaClient(creds: AlpacaCreds) {
 
   // ─── MARKET DATA ──────────────────────────────────────────────────────────
 
-  async function getBars(symbol: string, months = 18, timeframe = '1Day') {
+  async function getBars(
+    symbol: string,
+    months = 18,
+    timeframe = '1Day',
+    opts: { feed?: 'iex' | 'sip'; adjustment?: 'raw' | 'split' | 'dividend' | 'all' } = {},
+  ) {
+    const barFeed = opts.feed ?? feed
     const end = new Date()
     const start = new Date()
     start.setMonth(start.getMonth() - months)
@@ -251,7 +279,8 @@ export function createAlpacaClient(creds: AlpacaCreds) {
         timeframe,
         start: start.toISOString().slice(0, 10),
         end: end.toISOString().slice(0, 10),
-        feed,
+        feed: barFeed,
+        ...(opts.adjustment && { adjustment: opts.adjustment }),
         limit: 10000,
       })
 
@@ -262,7 +291,8 @@ export function createAlpacaClient(creds: AlpacaCreds) {
           timeframe,
           start: start.toISOString().slice(0, 10),
           end: end.toISOString().slice(0, 10),
-          feed,
+          feed: barFeed,
+          ...(opts.adjustment && { adjustment: opts.adjustment }),
           limit: 10000,
           page_token: next,
         })
@@ -479,6 +509,7 @@ export function createAlpacaClient(creds: AlpacaCreds) {
     getAccount,
     getPositions,
     getOrders,
+    getOrderByClientId,
     placeOrder,
     cancelOrder,
     cancelAllOrders,
